@@ -1,0 +1,12 @@
+{
+  "name": "prismatic-dream",
+  "version": "1.0.0",
+  "description": "a dream without a dream",
+  "main": "main.js",
+  "repository": "https://github.com/jmaliksi/prismatic-dream.git",
+  "author": "joe <joe.maliksi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tracery-grammar": "^2.7.4"
+  }
+}
