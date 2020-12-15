@@ -11,6 +11,14 @@ console.log(grammar.flatten('#origin#'));
 */
 
 
+var dreamSequences = [
+  '#dream#',
+  '#dream#\n #dream#',
+  '#dream#\n #dream#\n #dream#',
+  '#dream#\n #dream#\n #dream#\n #dream#',
+];
+
+
 var dreams = [
   '#subjectClause.capitalize# #preposition# #nounClause.a#.',
   '#subjectClause.capitalize# #preposition# #nounClause.a#, #noun.s# #verbing# #preposition# the #nounClause#.',
@@ -193,6 +201,7 @@ var prepositions = [
 ];
 
 var grammar = tracery.createGrammar({
+  'dreamSequence': dreamSequences,
   'dream': dreams,
   'noun': nouns,
   'nounness': nounness,
@@ -220,5 +229,6 @@ grammar.modifiers.s = function(s) {
 };
 
 for (var i = 0; i < 25; i++) {
-  console.log(grammar.flatten('#dream#'));
+  console.log(grammar.flatten('#dreamSequence#'));
+  console.log('');
 }
