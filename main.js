@@ -1,5 +1,7 @@
 const tracery = require('tracery-grammar');
 const words = require('./words.js');
+const util = require('util');
+const spectrum = require('./spectrum.js');
 
 var dreamSequences = [
   '#dream#\n #dream#',
@@ -31,10 +33,10 @@ var subjectClauses = [
 
 var singularNounPhrases = [
   '#uncountableNoun#',
-  '#adjective# #uncountableNoun#',
+  //'#adjective# #uncountableNoun#',
   'the #noun#',
   'the #adjective# #noun#',
-  '#noun.a#',
+  '#countableNoun.a#',
   '#adjective.a# #noun#',
   'some #uncountableNoun#',
   'some #adjective# #uncountableNoun#'
@@ -145,7 +147,7 @@ var prepositions = [
   //'between',
   'by',
   'down',
-  'during',
+  //'during',
   'for',
   'from',
   'in',
@@ -177,7 +179,7 @@ var grammar = tracery.createGrammar({
   'uncountableNoun': words.taggedBy('noun', 'uncountable'),
   'singularNounPhrase': singularNounPhrases,
   'pluralNounPhrase': pluralNounPhrases,
-  'nounPhrase': singularNounPhrases.concat(pluralNounPhrases)
+  'nounPhrase': ['#singularNounPhrase#', '#pluralNounPhrase#'],
 });
 grammar.addModifiers(tracery.baseEngModifiers);
 
@@ -211,29 +213,11 @@ grammar.addModifiers({
     }
     return s + 'ing';
   },
-
-  'athe': function(s) {
-    var s2 = s.split(' ');
-    var word = s2[s2.length - 1];
-    var article = 'a';
-    if (isCountable(word)) {
-      var phrase = s2.slice(0, -1).join(' ');
-      phrase += phrase.length > 0 ? ' ' : '';
-      phrase += word;
-      if (article === 'a') {
-        return grammar.modifiers.a(phrase);
-      }
-      return 'the ' + phrase;
-    }
-    return s;
-  }
 });
 
-function isCountable(word) {
-  return words.hasTag(word, 'countable');
-}
-
 for (var i = 0; i < 25; i++) {
-  console.log(grammar.flatten('#dreamSequence#'));
+  var dream = grammar.expand('#dreamSequence#');
+  console.log(dream.finishedText);
+  console.log(spectrum.findTags(dream));
   console.log('');
 }
