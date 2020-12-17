@@ -1,41 +1,31 @@
 var tracery = require('tracery-grammar');
 
-/*
-var grammar = tracery.createGrammar({
-  'origin': ['Hello #thing#.'],
-  'thing': ['world', 'borld', 'you']
-});
-grammar.addModifiers(tracery.baseEngModifiers);
-
-console.log(grammar.flatten('#origin#'));
-*/
-
-
 var dreamSequences = [
-  '#dream#',
   '#dream#\n #dream#',
   '#dream#\n #dream#\n #dream#',
   '#dream#\n #dream#\n #dream#\n #dream#',
+  '#dream#\n #dream#\n #dream#\n #dream#\n #dream#',
 ];
 
 
 var dreams = [
-  '#subjectClause.capitalize# #preposition# #nounClause.a#.',
-  '#subjectClause.capitalize# #preposition# #nounClause.a#, #noun.s# #verbing# #preposition# the #nounClause#.',
-  'There is #nounClause.a#.',
-  'The #nounness# of #nounClause.a#.',
+  '#subjectClause.capitalize# #preposition# #nounClause.athe#.',
+  '#subjectClause.capitalize# #preposition# #nounClause.athe#, #noun.s# #verb.ing# #preposition# the #nounClause#.',
+  'There is #nounClause.athe#.',
+  'The #nounness# of #nounClause.athe#.',
   '#subjectClause.capitalize#.',
-  '#noun.s.capitalize# #verb#, #noun.s# #verb#, #noun.s# #verb#.'
+  '#noun.s.capitalize# #verb#, #noun.s# #verb#, #noun.s# #verb#.',
+  'Memories of #nounClause.athe#.',
+  'Memories of #nounClause.athe#, #verb.ing# #preposition# #nounClause.athe#.',
 ];
 
 var subjectClauses = [
-  'the #nounClause# #verb.s#',
-  '#nounClause.a# #verb.s#',
+  '#nounClause.athe# #verb.s#',
+  '#nounClause.athe# #verb.s#',
   '#nounClause.s# #verb#',
   'some #nounClause.s# #verb#',
-  'several #nounClause.s# #verb#',
   'many #nounClause.s# #verb#',
-  'inummerable #nounClause.s# #verb#',
+  'inummerable #nounClause.s# #verb#'
 ];
 
 var nounClauses = [
@@ -44,65 +34,91 @@ var nounClauses = [
 ];
 
 var adjectives = [
-  'cold',
-  'dark',
   'bright',
   'burning',
-  'forgotten',
-  'distant',
-  'hazy',
-  'lost',
-  'setting',
-  'second',
-  'hot',
-  'smooth',
-  'remarkable',
-  'forlorn',
-  'imposing',
+  'cold',
+  'concrete',
   'consuming',
-  'restless',
-  'old',
-  'unknown',
+  'dark',
+  'distant',
   'faceless',
-  'laughing',
   'featureless',
-  'shifting',
   'fleeting',
-  'stonelike',
+  'forgotten',
+  'forlorn',
+  'hazy',
+  'hot',
+  'imposing',
+  'laughing',
+  'lost',
   'marble',
-  'melting'
+  'melting',
+  'old',
+  'remarkable',
+  'restless',
+  'second',
+  'setting',
+  'shapeless',
+  'sharp',
+  'shattered',
+  'shifting',
+  'smooth',
+  'stonelike',
+  'unknown',
+  'wavering',
 ];
 
 var nouns = [
-  'sun',
-  'city',
-  'thunderhead',
-  'cloud',
-  'tree',
-  'sun',
-  'friend',
-  'love',
+  'apple',
+  'bed',
   'bird',
-  'laughter',
+  'building',
   'canopy',
-  'forest',
-  'ground',
-  'volcano',
-  'dog',
-  'mouse',
-  'man',
-  'woman',
-  'child',
-  'moment',
+  'car',
   'carving',
-  'pen',
-  'sword',
-  'mountain',
-  'rose',
-  'pendant',
-  'desk',
   'chair',
-  'car'
+  'child',
+  'city',
+  'cloud',
+  'darkness',
+  'desk',
+  'distance',
+  'dog',
+  'figure',
+  'figureine',
+  'fog',
+  'forest',
+  'friend',
+  'ground',
+  'haze',
+  'laughter',
+  'love',
+  'lighthouse',
+  'man',
+  'moon',
+  'moment',
+  'mountain',
+  'mouse',
+  'panther',
+  'pen',
+  'pendant',
+  'rain',
+  'road',
+  'rose',
+  'shade',
+  'shadow',
+  'shape',
+  'snow',
+  'solitude',
+  'spider',
+  'star',
+  'sun',
+  'sword',
+  'tide',
+  'thunderhead',
+  'tree',
+  'volcano',
+  'woman',
 ];
 
 var nounness = [
@@ -115,54 +131,67 @@ var nounness = [
   'heat',
   'brightness',
   'darkness',
+  'quiet',
+  'rage',
+  'passion',
+  'love'
 ];
 
 var verbs = [
-  'stand',
-  'swirl',
-  'rise',
-  'shiver',
-  'set',
-  'drift',
-  'fall',
+  'appear',
+  'ascend',
+  'blink',
   'bloom',
-  'smile',
-  'laugh',
-  'move',
-  'lunge',
+  'coalesce',
+  //'consume',
+  'crash',
+  'creak',
+  'crumble',
+  'dance',
+  'descend',
+  'disappear',
+  //'divide',
+  'drift',
+  'envelope',
+  'emanate',
+  'fall',
+  'falter',
+  'float',
   'fly',
   'glide',
-  'scatter',
-  'appear',
-  'disappear',
-  'blink',
-  'crumble',
+  'glow',
   'grow',
-  'falter',
-  'shrink',
-  'consume',
+  'laugh',
+  'lunge',
   'merge',
-  'divide',
-  'dance',
-  'twinkle',
-  'shimmer',
+  'move',
+  'rise',
+  //'root',
+  'rumble',
+  'run',
+  'scatter',
+  'scramble',
+  'scribble',
+  'set',
+  'seep',
   'shake',
-  'glow'
-];
-
-var verbing = [
-  'standing',
-  'swirling',
-  'rising',
-  'shivering',
-  'setting',
-  'drifting',
-  'falling',
-  'blooming',
-  'creaking',
-  'singing',
-  'laughing',
-  'emanating'
+  'shatter',
+  'shimmer',
+  'shiver',
+  'shrink',
+  'sing',
+  'smile',
+  'spiral',
+  'stand',
+  'stare',
+  'swirl',
+  'tower',
+  'trot',
+  'twinkle',
+  'walk',
+  'wave',
+  'waver',
+  'wink'
 ];
 
 var prepositions = [
@@ -178,7 +207,7 @@ var prepositions = [
   'behind',
   'below',
   'beside',
-  'between',
+  //'between',
   'by',
   'down',
   'during',
@@ -207,7 +236,6 @@ var grammar = tracery.createGrammar({
   'nounness': nounness,
   'verb': verbs,
   'preposition': prepositions,
-  'verbing': verbing,
   'subjectClause': subjectClauses,
   'nounClause': nounClauses,
   'adjective': adjectives
@@ -222,11 +250,57 @@ grammar.modifiers.s = function(s) {
   if (s.slice(-5) === 'mouse') {
     return s.slice(0, -5) + 'mice';
   }
+  if (s.slice(-5) === 'laugh') {
+    return s.slice(0, -5) + 'laughs';
+  }
   if (s.length >= 3 && s.slice(-3) === 'man') {
     return s.slice(0, -3) + 'men';
   }
   return originalSMod(s);
 };
+
+grammar.addModifiers({
+  'ing': function(s) {
+    if (s.charAt(s.length - 1) === 'e') {
+      return s.slice(0, -1) + 'ing';
+    }
+    else if (s.slice(-3) === 'set') {
+      return s.slice(0, -3) + 'setting';
+    }
+    return s + 'ing';
+  },
+
+  'athe': function(s) {
+    var s2 = s.split(' ');
+    var word = s2[s2.length - 1];
+    var article = 'a';
+    if (isCountable(word)) {
+      var phrase = s2.slice(0, -1).join(' ');
+      phrase += phrase.length > 0 ? ' ' : '';
+      phrase += word;
+      if (article === 'a') {
+        return grammar.modifiers.a(phrase);
+      }
+      return 'the ' + phrase;
+    }
+    return s;
+  }
+});
+
+function isCountable(word) {
+  switch (word) {
+    case 'love':
+    case 'laughter':
+    case 'ground':
+    case 'solitude':
+    case 'darkness':
+    case 'rain':
+    case 'haze':
+    case 'distance':
+      return false;
+    default: return true;
+  }
+}
 
 for (var i = 0; i < 25; i++) {
   console.log(grammar.flatten('#dreamSequence#'));
