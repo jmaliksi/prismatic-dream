@@ -10,30 +10,43 @@ var dreamSequences = [
 
 
 var dreams = [
-  '#subjectClause.capitalize# #preposition# #nounClause.athe#.',
-  '#subjectClause.capitalize# #preposition# #nounClause.athe#, #noun.s# #verb.ing# #preposition# the #nounClause#.',
-  'There is #nounClause.athe#.',
-  'The #nounness# of #nounClause.athe#.',
+  '#subjectClause.capitalize# #preposition# #nounPhrase#.',
+  '#subjectClause.capitalize# #preposition# #nounPhrase#, #noun.s# #verb.ing# #preposition# #nounPhrase#.',
+  '#subjectClause.capitalize# #preposition# #nounPhrase#, #noun.s# #verb.ing# #preposition# #nounPhrase#.',
+  'There is #singularNounPhrase#.',
+  'There are #pluralNounPhrase#.',
+  'The #nounness# of #nounPhrase#.',
   '#subjectClause.capitalize#.',
   '#noun.s.capitalize# #verb#, #noun.s# #verb#, #noun.s# #verb#.',
-  'Memories of #nounClause.athe#.',
-  'Memories of #nounClause.athe#, #verb.ing# #preposition# #nounClause.athe#.',
-  '#verb.ing.a.capitalize# #nounClause#.',
-  'What #verb.s# #preposition# the #nounClause.s#?'
+  'Memories of #nounPhrase#.',
+  'Memories of #nounPhrase#, #verb.ing# #preposition# #nounPhrase#.',
+  '#verb.ing.a.capitalize# #adjective# #countableNoun#.',
+  'What #verb.s# #preposition# #nounPhrase#?'
 ];
 
 var subjectClauses = [
-  '#nounClause.athe# #verb.s#',
-  '#nounClause.athe# #verb.s#',
-  '#nounClause.s# #verb#',
-  'some #nounClause.s# #verb#',
-  'many #nounClause.s# #verb#',
-  'inummerable #nounClause.s# #verb#'
+  '#singularNounPhrase# #verb.s#',
+  '#pluralNounPhrase# #verb#'
 ];
 
-var nounClauses = [
-  '#noun#',
-  '#adjective# #noun#'
+var singularNounPhrases = [
+  '#uncountableNoun#',
+  '#adjective# #uncountableNoun#',
+  'the #noun#',
+  'the #adjective# #noun#',
+  '#noun.a#',
+  '#adjective.a# #noun#',
+  'some #uncountableNoun#',
+  'some #adjective# #uncountableNoun#'
+];
+
+var pluralNounPhrases = [
+  '#countableNoun.s#',
+  '#adjective# #countableNoun.s#',
+  'some #countableNoun.s#',
+  'many #countableNoun.s#',
+  'several #countableNoun.s#',
+  'inummerable #countableNoun.s#',
 ];
 
 var nounness = [
@@ -71,6 +84,7 @@ var verbs = [
   'emanate',
   'fall',
   'falter',
+  'form',
   'float',
   'fly',
   'glide',
@@ -79,10 +93,12 @@ var verbs = [
   'laugh',
   //'lunge',
   'merge',
+  'mist',
   'move',
   'play',
   'rise',
   //'root',
+  'roar',
   'rumble',
   'run',
   'scatter',
@@ -102,6 +118,7 @@ var verbs = [
   'stand',
   'stare',
   'swirl',
+  'thrive',
   'tower',
   'trot',
   'twinkle',
@@ -140,7 +157,7 @@ var prepositions = [
   'out of',
   'over',
   'through',
-  'to',
+  //'to',
   'toward',
   'under',
   'up',
@@ -155,8 +172,12 @@ var grammar = tracery.createGrammar({
   'verb': verbs,
   'preposition': prepositions,
   'subjectClause': subjectClauses,
-  'nounClause': nounClauses,
-  'adjective': words.tagTree.adjective
+  'adjective': words.tagTree.adjective,
+  'countableNoun': words.taggedBy('noun', 'countable'),
+  'uncountableNoun': words.taggedBy('noun', 'uncountable'),
+  'singularNounPhrase': singularNounPhrases,
+  'pluralNounPhrase': pluralNounPhrases,
+  'nounPhrase': singularNounPhrases.concat(pluralNounPhrases)
 });
 grammar.addModifiers(tracery.baseEngModifiers);
 
