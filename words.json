@@ -1,0 +1,580 @@
+{
+  "bright": [
+    "adjective",
+    "red",
+    "orange",
+    "yellow",
+    "white"
+  ],
+
+  "burning": [
+    "adjective",
+    "red",
+    "orange",
+    "yellow"
+  ],
+
+  "cold": [
+    "adjective",
+    "blue",
+    "purple",
+    "black"
+  ],
+
+  "concrete": [
+    "adjective",
+    "noun",
+    "black",
+    "uncountable"
+  ],
+
+  "consuming": [
+    "adjective"
+  ],
+
+  "crystal": [
+    "adjective",
+    "noun",
+    "blue",
+    "purple",
+    "white",
+    "yellow",
+    "countable"
+  ],
+
+  "crystalline": [
+    "adjective",
+    "blue",
+    "purple",
+    "white",
+    "yellow"
+  ],
+
+  "dark": [
+    "adjective",
+    "black",
+    "purple"
+  ],
+
+  "distant": [
+    "adjective"
+  ],
+
+  "faint": [
+    "adjective"
+  ],
+
+  "featureless": [
+    "adjective"
+  ],
+
+  "fleeting": [
+    "adjective"
+  ],
+
+  "forgotten": [
+    "adjective"
+  ],
+
+  "forlorn": [
+    "adjective"
+  ],
+
+  "glowing": [
+    "adjective",
+    "white",
+    "yellow"
+  ],
+
+  "hazy": [
+    "adjective",
+    "white"
+  ],
+
+  "hot": ["_adjective"],
+
+  "imposing": [
+    "adjective"
+  ],
+
+  "laughing": [
+    "adjective"
+  ],
+
+  "lost": [
+    "adjective"
+  ],
+
+  "marble": [
+    "adjective",
+    "noun",
+    "countable"
+  ],
+
+  "masked": [
+    "adjective"
+  ],
+
+  "melting": [
+    "adjective"
+  ],
+
+  "old": [
+    "adjective"
+  ],
+
+  "pale": [
+    "adjective",
+    "white"
+  ],
+
+  "remarkable": [
+    "adjective"
+  ],
+
+  "restless": [
+    "adjective"
+  ],
+
+  "second": [
+    "adjective"
+  ],
+
+  "setting": [
+    "adjective"
+  ],
+
+  "scorched": [
+    "adjective",
+    "black",
+    "orange"
+  ],
+
+  "scorching": ["_adjective"],
+
+  "shapeless": [
+    "adjective"
+  ],
+
+  "sharp": [
+    "adjective"
+  ],
+
+  "shattered": [
+    "adjective"
+  ],
+
+  "shifting": [
+    "adjective"
+  ],
+
+  "smooth": [
+    "adjective"
+  ],
+
+  "stonelike": [
+    "adjective"
+  ],
+
+  "unknown": [
+    "adjective"
+  ],
+
+  "warm": [
+    "adjective",
+    "orange"
+  ],
+
+  "wavering": [
+    "adjective"
+  ],
+
+  "apple": [
+    "noun",
+    "red",
+    "green",
+    "countable"
+  ],
+
+  "bed": [
+    "noun",
+    "white",
+    "blue",
+    "countable",
+    "colorless"
+  ],
+
+  "bird": [
+    "noun",
+    "black",
+    "white",
+    "blue",
+    "red",
+    "yellow",
+    "countable",
+    "colorless"
+  ],
+
+  "building": [
+    "noun",
+    "countable",
+    "black",
+    "purple",
+    "colorless"
+  ],
+
+  "canopy": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "car": [
+    "noun",
+    "red",
+    "black",
+    "countable",
+    "blue",
+    "colorless"
+  ],
+
+  "carving": [
+    "noun",
+    "green",
+    "black",
+    "countable",
+    "colorless"
+  ],
+
+  "cat": [
+    "noun",
+    "black",
+    "countable",
+    "orange",
+    "white"
+  ],
+
+  "chair": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "child": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "city": [
+    "noun",
+    "countable",
+    "black",
+    "yellow",
+    "colorless"
+  ],
+
+  "cloud": [
+    "noun",
+    "white",
+    "countable"
+  ],
+
+  "darkness": [
+    "noun",
+    "uncountable",
+    "black"
+  ],
+
+  "desk": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "distance": [
+    "noun",
+    "uncountable",
+    "colorless"
+  ],
+
+  "dog": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "figure": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "figurine": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "fog": [
+    "noun",
+    "uncountable",
+    "white"
+  ],
+
+  "forest": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "friend": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "ground": [
+    "noun",
+    "colorless",
+    "uncountable"
+  ],
+
+  "haze": [
+    "noun",
+    "white",
+    "uncountable",
+    "blue"
+  ],
+
+  "laughter": [
+    "noun",
+    "uncountable",
+    "colorless",
+    "yellow"
+  ],
+
+  "lemon": [
+    "noun",
+    "countable",
+    "yellow"
+  ],
+
+  "love": [
+    "noun",
+    "uncountable",
+    "red"
+  ],
+
+  "lightbulb": [
+    "noun",
+    "countable",
+    "yellow",
+    "white"
+  ],
+
+  "lighthouse": [
+    "noun",
+    "colorless",
+    "red",
+    "white",
+    "blue",
+    "countable",
+    "black"
+  ],
+
+  "man": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "moon": [
+    "noun",
+    "countable",
+    "white",
+    "black"
+  ],
+
+  "moment": [
+    "noun",
+    "colorless",
+    "uncountable"
+  ],
+
+  "mountain": [
+    "noun",
+    "white",
+    "green",
+    "blue",
+    "purple",
+    "countable",
+    "colorless"
+  ],
+
+  "mouse": [
+    "noun",
+    "white",
+    "black",
+    "colorless",
+    "countable"
+  ],
+
+  "ocean": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "orange": [
+    "noun",
+    "orange",
+    "countable"
+  ],
+
+  "panther": ["_noun"],
+
+  "pen": [
+    "noun",
+    "blue",
+    "black",
+    "red",
+    "countable"
+  ],
+
+  "pendant": [
+    "noun",
+    "yellow",
+    "countable",
+    "colorless"
+  ],
+
+  "rain": [
+    "noun",
+    "blue",
+    "uncountable"
+  ],
+
+  "road": [
+    "noun",
+    "black",
+    "countable",
+    "yellow"
+  ],
+
+  "rose": [
+    "noun",
+    "red",
+    "countable"
+  ],
+
+  "sea": [
+    "noun",
+    "blue",
+    "countable"
+  ],
+
+  "shade": [
+    "noun",
+    "purple",
+    "black",
+    "countable",
+    "yellow"
+  ],
+
+  "shadow": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "shape": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "snow": [
+    "noun",
+    "white",
+    "uncountable"
+  ],
+
+  "solitude": [
+    "noun",
+    "colorless",
+    "uncountable"
+  ],
+
+  "spider": [
+    "noun",
+    "black",
+    "countable"
+  ],
+
+  "star": [
+    "noun",
+    "white",
+    "yellow",
+    "red",
+    "blue",
+    "countable"
+  ],
+
+  "statue": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "sun": [
+    "noun",
+    "yellow",
+    "white",
+    "orange",
+    "countable"
+  ],
+
+  "sword": [
+    "noun",
+    "white",
+    "colorless",
+    "blue",
+    "countable"
+  ],
+
+  "tide": [
+    "noun",
+    "uncountable",
+    "blue",
+    "white"
+  ],
+
+  "thunderhead": [
+    "noun",
+    "black",
+    "purple",
+    "countable"
+  ],
+
+  "tree": [
+    "noun",
+    "green",
+    "countable"
+  ],
+
+  "volcano": [
+    "noun",
+    "red",
+    "orange",
+    "countable"
+  ],
+
+  "woman": [
+    "noun",
+    "colorless",
+    "countable"
+  ]
+
+
+}

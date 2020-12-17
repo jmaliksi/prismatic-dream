@@ -1,4 +1,5 @@
-var tracery = require('tracery-grammar');
+const tracery = require('tracery-grammar');
+const words = require('./words.js');
 
 var dreamSequences = [
   '#dream#\n #dream#',
@@ -17,6 +18,8 @@ var dreams = [
   '#noun.s.capitalize# #verb#, #noun.s# #verb#, #noun.s# #verb#.',
   'Memories of #nounClause.athe#.',
   'Memories of #nounClause.athe#, #verb.ing# #preposition# #nounClause.athe#.',
+  '#verb.ing.a.capitalize# #nounClause#.',
+  'What #verb.s# #preposition# the #nounClause.s#?'
 ];
 
 var subjectClauses = [
@@ -31,94 +34,6 @@ var subjectClauses = [
 var nounClauses = [
   '#noun#',
   '#adjective# #noun#'
-];
-
-var adjectives = [
-  'bright',
-  'burning',
-  'cold',
-  'concrete',
-  'consuming',
-  'dark',
-  'distant',
-  'faceless',
-  'featureless',
-  'fleeting',
-  'forgotten',
-  'forlorn',
-  'hazy',
-  'hot',
-  'imposing',
-  'laughing',
-  'lost',
-  'marble',
-  'melting',
-  'old',
-  'remarkable',
-  'restless',
-  'second',
-  'setting',
-  'shapeless',
-  'sharp',
-  'shattered',
-  'shifting',
-  'smooth',
-  'stonelike',
-  'unknown',
-  'wavering',
-];
-
-var nouns = [
-  'apple',
-  'bed',
-  'bird',
-  'building',
-  'canopy',
-  'car',
-  'carving',
-  'chair',
-  'child',
-  'city',
-  'cloud',
-  'darkness',
-  'desk',
-  'distance',
-  'dog',
-  'figure',
-  'figureine',
-  'fog',
-  'forest',
-  'friend',
-  'ground',
-  'haze',
-  'laughter',
-  'love',
-  'lighthouse',
-  'man',
-  'moon',
-  'moment',
-  'mountain',
-  'mouse',
-  'panther',
-  'pen',
-  'pendant',
-  'rain',
-  'road',
-  'rose',
-  'shade',
-  'shadow',
-  'shape',
-  'snow',
-  'solitude',
-  'spider',
-  'star',
-  'sun',
-  'sword',
-  'tide',
-  'thunderhead',
-  'tree',
-  'volcano',
-  'woman',
 ];
 
 var nounness = [
@@ -152,7 +67,7 @@ var verbs = [
   'disappear',
   //'divide',
   'drift',
-  'envelope',
+  //'envelope',
   'emanate',
   'fall',
   'falter',
@@ -162,9 +77,10 @@ var verbs = [
   'glow',
   'grow',
   'laugh',
-  'lunge',
+  //'lunge',
   'merge',
   'move',
+  'play',
   'rise',
   //'root',
   'rumble',
@@ -180,6 +96,7 @@ var verbs = [
   'shiver',
   'shrink',
   'sing',
+  'slide',
   'smile',
   'spiral',
   'stand',
@@ -188,6 +105,7 @@ var verbs = [
   'tower',
   'trot',
   'twinkle',
+  'waft',
   'walk',
   'wave',
   'waver',
@@ -232,13 +150,13 @@ var prepositions = [
 var grammar = tracery.createGrammar({
   'dreamSequence': dreamSequences,
   'dream': dreams,
-  'noun': nouns,
+  'noun': words.tagTree.noun,
   'nounness': nounness,
   'verb': verbs,
   'preposition': prepositions,
   'subjectClause': subjectClauses,
   'nounClause': nounClauses,
-  'adjective': adjectives
+  'adjective': words.tagTree.adjective
 });
 grammar.addModifiers(tracery.baseEngModifiers);
 
@@ -267,6 +185,9 @@ grammar.addModifiers({
     else if (s.slice(-3) === 'set') {
       return s.slice(0, -3) + 'setting';
     }
+    else if (s.slice(-3) === 'run') {
+      return s.slice(0, -3) + 'running';
+    }
     return s + 'ing';
   },
 
@@ -288,18 +209,7 @@ grammar.addModifiers({
 });
 
 function isCountable(word) {
-  switch (word) {
-    case 'love':
-    case 'laughter':
-    case 'ground':
-    case 'solitude':
-    case 'darkness':
-    case 'rain':
-    case 'haze':
-    case 'distance':
-      return false;
-    default: return true;
-  }
+  return words.hasTag(word, 'countable');
 }
 
 for (var i = 0; i < 25; i++) {
