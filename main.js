@@ -3,9 +3,9 @@ const words = require('./words.js');
 const spectrum = require('./spectrum.js');
 
 var dreamSequences = [
-  '#dream#\n #dream#',
-  '#dream#\n #dream#\n #dream#',
-  '#dream#\n #dream#\n #dream#\n #dream#',
+  '#dream# #dream#',
+  '#dream# #dream# #dream#',
+  '#dream# #dream# #dream# #dream#',
   //'#dream#\n #dream#\n #dream#\n #dream#\n #dream#',
 ];
 
@@ -32,8 +32,8 @@ var dreamAction = [
   '#dreamSubject.sif#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #singularNounPhrase# #action.s# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #pluralNounPhrase# #action# #preposition# #nounPhrase#.'
+  '#dreamSubject.sif#, #singularNounPhrase# #action.ing# #preposition# #nounPhrase#.',
+  '#dreamSubject.sif#, #pluralNounPhrase# #action.ing# #preposition# #nounPhrase#.'
 ]
 
 var subjectClauses = [
@@ -79,7 +79,8 @@ var nounness = [
   'quiet',
   'rage',
   'passion',
-  'love'
+  'love',
+  'sadness'
 ];
 
 var prepositions = [
@@ -113,7 +114,7 @@ var prepositions = [
   //'to',
   'toward',
   'under',
-  'up',
+  //'up',
   'with'
 ];
 
@@ -198,7 +199,7 @@ for (var i = 0; i < 25; i++) {
 
   var dreamSequence = '#dreamSequence#';
   if (prevDream) {
-    dreamSequence = '#dir.capitalize#. #dreamAction#\n #dreamSequence#';
+    dreamSequence = '#dir.capitalize#. #dreamAction# #dreamSequence#';
     var clauses = spectrum.relevantClauses(prevDream, dir);
     //console.log(clauses);
     var up = (Math.random() * (clauses.up.length + clauses.down.length)) < clauses.up.length;
@@ -238,8 +239,11 @@ for (var i = 0; i < 25; i++) {
   actionTag = [...actionTag];
   //console.log(actionTag);
   dir = actionTag[Math.floor(Math.random() * actionTag.length)];
+  if (!dir) {
+    dir = Math.random() < .5 ? 'black' : 'white';
+  }
   //console.log(dir);
   spectrumTags = spectrum.move(spectrumTags, dir);
 
-  console.log('');
+  //console.log('');
 }
