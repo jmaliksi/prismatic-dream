@@ -1,7 +1,6 @@
 {
   "bright": [
     "adjective",
-    "red",
     "orange",
     "yellow",
     "white"
@@ -35,10 +34,10 @@
   "crystal": [
     "adjective",
     "noun",
-    "blue",
+    "_blue",
     "purple",
     "white",
-    "yellow",
+    "_yellow",
     "countable"
   ],
 
@@ -94,6 +93,10 @@
   "hot": ["_adjective"],
 
   "imposing": [
+    "adjective"
+  ],
+
+  "incredible": [
     "adjective"
   ],
 
@@ -341,7 +344,7 @@
   ],
 
   "haze": [
-    "noun",
+    "_noun",
     "white",
     "uncountable",
     "blue"
@@ -574,7 +577,307 @@
     "noun",
     "colorless",
     "countable"
-  ]
+  ],
 
+  "appear": [
+    "verb",
+    "up"
+  ],
+
+  "ascend": [
+    "verb",
+    "up"
+  ],
+
+  "blink": [
+    "verb",
+    "down"
+  ],
+
+  "bloom": [
+    "verb",
+    "up"
+  ],
+
+  "coalesce": [
+    "verb",
+    "up"
+  ],
+
+  "consume": [
+    "verb",
+    "up"
+  ],
+
+  "crash": [
+    "verb",
+    "down"
+  ],
+
+  "creak": [
+    "verb",
+    "down"
+  ],
+
+  "crumble": [
+    "verb",
+    "down"
+  ],
+
+  "dance": [
+    "verb",
+    "up"
+  ],
+
+  "descend": [
+    "verb",
+    "down"
+  ],
+
+  "disappear": [
+    "verb",
+    "down"
+  ],
+
+  "divide": [
+    "_verb"
+  ],
+
+  "drift": [
+    "verb",
+    "down"
+  ],
+
+  "envelope": [
+    "_verb"
+  ],
+
+  "emanate": [
+    "verb",
+    "up"
+  ],
+
+  "fall": [
+    "verb",
+    "down"
+  ],
+
+  "falter": [
+    "verb",
+    "down"
+  ],
+
+  "form": [
+    "verb",
+    "_up"
+  ],
+
+  "float": [
+    "verb",
+    "up"
+  ],
+
+  "fly": [
+    "verb",
+    "up"
+  ],
+
+  "glide": [
+    "verb",
+    "up"
+  ],
+
+  "glow": [
+    "verb",
+    "up"
+  ],
+
+  "grow": [
+    "verb",
+    "up"
+  ],
+
+  "laugh": [
+    "verb",
+    "_up"
+  ],
+
+  "lunge": [
+    "_verb"
+  ],
+
+  "merge": [
+    "verb",
+    "_down"
+  ],
+
+  "mist": [
+    "verb",
+    "_down"
+  ],
+
+  "move": [
+    "verb",
+    "_up",
+    "_down"
+  ],
+
+  "play": [
+    "verb",
+    "up"
+  ],
+
+  "rise": [
+    "verb",
+    "up"
+  ],
+
+  "root": [
+    "_verb"
+  ],
+
+  "roar": [
+    "verb",
+    "up"
+  ],
+
+  "rumble": [
+    "verb",
+    "down"
+  ],
+
+  "run": [
+    "verb",
+    "_down"
+  ],
+
+  "scatter": [
+    "verb",
+    "down"
+  ],
+
+  "scramble": [
+    "verb",
+    "down"
+  ],
+
+  "scribble": [
+    "_verb"
+  ],
+
+  "set": [
+    "verb",
+    "down"
+  ],
+
+  "seep": [
+    "verb",
+    "down"
+  ],
+
+  "shake": [
+    "verb",
+    "down"
+  ],
+
+  "shatter": [
+    "verb",
+    "down"
+  ],
+
+  "shimmer": [
+    "verb",
+    "up"
+  ],
+
+  "shiver": [
+    "verb",
+    "down"
+  ],
+
+  "shrink": [
+    "verb",
+    "down"
+  ],
+
+  "sing": [
+    "verb",
+    "up"
+  ],
+
+  "slide": [
+    "verb",
+    "down"
+  ],
+
+  "smile": [
+    "verb",
+    "up"
+  ],
+
+  "spiral": [
+    "verb",
+    "down"
+  ],
+
+  "stand": [
+    "verb",
+    "up"
+  ],
+
+  "stare": [
+    "verb",
+    "down"
+  ],
+
+  "swirl": [
+    "verb",
+    "up"
+  ],
+
+  "thrive": [
+    "verb",
+    "up"
+  ],
+
+  "tower": [
+    "verb",
+    "up"
+  ],
+
+  "trot": [
+    "verb",
+    "_up"
+  ],
+
+  "twinkle": [
+    "verb",
+    "up"
+  ],
+
+  "waft": [
+    "verb",
+    "down"
+  ],
+
+  "walk": [
+    "verb",
+    "_up"
+  ],
+
+  "wave": [
+    "verb",
+    "_up"
+  ],
+
+  "waver": [
+    "verb",
+    "down"
+  ],
+
+  "wink": [
+    "verb",
+    "down"
+  ]
 
 }
