@@ -33,8 +33,8 @@ var dreamAction = [
   '#dreamSubject.sif#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #singularNounPhrase# #action.ing# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #pluralNounPhrase# #action.ing# #preposition# #nounPhrase#.'
+  '#dreamSubject.sif#, #singularNounPhrase# #verb.ing# #preposition# #nounPhrase#.',
+  '#dreamSubject.sif#, #pluralNounPhrase# #verb.ing# #preposition# #nounPhrase#.'
 ]
 
 var subjectClauses = [
@@ -87,7 +87,9 @@ var nounness = [
   'rage',
   'passion',
   'love',
-  'sadness'
+  'sadness',
+  'wisdom',
+  'folly'
 ];
 
 var prepositions = [
@@ -107,7 +109,7 @@ var prepositions = [
   'by',
   'down',
   //'during',
-  'for',
+  //'for',
   'from',
   'in',
   'inside',
@@ -163,6 +165,9 @@ mods.s = function(s) {
   if (s.length >= 6 && s.slice(-6) === 'tomato') {
     return s.slice(0, -6) + 'tomatoes';
   }
+  if (s.length >= 5 && s.slice(-5) === 'knife') {
+    return s.slice(0, -5) + 'knives';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -204,9 +209,10 @@ var dir;
 var sleeper = new dreamer.Dreamer(baseGrammar, mods);
 
 function dreaming() {
-  prevDream = sleeper.dream(spectrumTags, prevDream, dir);
-  console.log(prevDream.finishedText);
   console.log('');
+  var d = sleeper.dream(spectrumTags, prevDream, dir);
+  console.log(d.text);
+  prevDream = d.dream;
   rl.setPrompt("> ");
   rl.prompt();
 }

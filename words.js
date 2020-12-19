@@ -33,9 +33,10 @@ function stats(tree) {
 function taggedBy(...tags) {
   var words = [];
   for (const [word, desc] of Object.entries(data)) {
-    var has = tags.reduce((total, tag) => {
-      return total && desc.includes(tag);
-    });
+    var has = true;
+    for (const tag of tags) {
+      has = has && desc.includes(tag);
+    }
     if (has) {
       words.push(word);
     }

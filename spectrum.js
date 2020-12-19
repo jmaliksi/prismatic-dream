@@ -55,7 +55,7 @@ function findTags(phrase) {
     return {};
   }
 
-  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase') {
+  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase' || phrase.symbol === 'countableNoun') {
     var tags = extractSpectrum(phrase);
     var res = {}
     res[phrase.finishedText] = [...tags];

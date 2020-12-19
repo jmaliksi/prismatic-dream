@@ -8,33 +8,78 @@ class Dreamer {
     this.mods = mods
   }
 
-  dream(spectrumTags, prevDream, dir) {
+  modGrammarForSpectrum(spectrumTags) {
     var gram = {...this.baseGrammar};
     gram['adjective'] = gram.adjective.concat(spectrum.filter(spectrumTags, gram['adjective']));
     gram['noun'] = spectrum.filter(spectrumTags, gram['noun']);
     gram['countableNoun'] = spectrum.filter(spectrumTags, gram['countableNoun']);
     gram['uncountableNoun'] = spectrum.filter(spectrumTags, gram['uncountableNoun']);
+    return gram;
+  }
+
+  createTrace(grammar) {
+    var g = tracery.createGrammar(gram);
+    g.addModifiers(this.mods);
+    return g;
+  }
+
+  dreamPreamble(spectrumTags, prevDream, dir) {
+    // return list of traces
+    if (!prevDream || !dir) {
+      return []
+    }
+
+    var gram = this.modGrammarForSpectrum(spectrumTags);
+    var clauses = spectrum.relevantClauses(prevDream, dir);
+    var seen = new Set();
+    var scenes = [];
+    var index = -1;
+    for (const clause of clauses.up.concat(clauses.down)) {
+      if (!clause || seen.has(clause)) {
+        continue;
+      }
+      index += 1;
+      seen.add(clause);
+      var subject = this.mods.capitalize(clause) + (clauses.up.includes(clause) ? ' #upVerb#' : ' #downVerb#');
+      gram['dreamSubject' + index] = subject;
+      var actions = []
+      for (const a of gram.dreamAction) {
+        actions.push(a.replace('dreamSubject', 'dreamSubject' + index));
+      }
+      gram['dreamAction' + index] = actions;
+      scenes.push('#dreamAction' + index + '#');
+    }
+
+    return {
+      'grammar': gram,
+      'symbol': scenes.join(' ')
+    }
+  }
+
+  dream(spectrumTags, prevDream, dir) {
+    var gram = this.modGrammarForSpectrum(spectrumTags);
 
     var dreamSequence = '#dreamSequence#';
     if (prevDream) {
-      dreamSequence = '#dir.capitalize#. #dreamAction# #dreamSequence#';
-      var clauses = spectrum.relevantClauses(prevDream, dir);
-      var up = (Math.random() * (clauses.up.length + clauses.down.length)) < clauses.up.length;
-      gram['action'] = words.taggedBy('verb', up ? 'up' : 'down');
-      gram['prevNoun'] = clauses.up.concat(clauses.down);
-      if (!gram.prevNoun) {
-        gram.prevNoun = spectrum.relevantClauses(prevDream, '*').up;
-      }
       gram['dir'] = [dir];
       gram['noun'] = gram['noun'].concat(words.taggedBy('noun', dir));
       gram['countableNoun'] = gram['countableNoun'].concat(words.taggedBy('noun', 'countable', dir));
       gram['uncountableNoun'] = gram['uncountableNoun'].concat(words.taggedBy('noun', 'uncountable', dir));
+
+      var dreamble = this.dreamPreamble(spectrumTags, prevDream, dir);
+      gram = {...gram, ...dreamble.grammar};
+      dreamSequence = '#dir.capitalize#. ' + dreamble.symbol + ' #dreamSequence#';
     }
 
     var grammar = tracery.createGrammar(gram);
     grammar.addModifiers(this.mods);
 
-    return grammar.expand(dreamSequence);
+    var d = grammar.expand(dreamSequence);
+
+    return {
+      'text': d.finishedText,
+      'dream': d
+    }
   }
 }
 
