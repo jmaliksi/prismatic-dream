@@ -33,8 +33,12 @@ var dreamAction = [
   '#dreamSubject.sif#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
   '#dreamSubject.sif# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #singularNounPhrase# #verb.ing# #preposition# #nounPhrase#.',
-  '#dreamSubject.sif#, #pluralNounPhrase# #verb.ing# #preposition# #nounPhrase#.'
+  //'#dreamSubject.sif#, #singularNounPhrase# #verb.ing# #preposition# #nounPhrase#.',
+  //'#dreamSubject.sif#, #pluralNounPhrase# #verb.ing# #preposition# #nounPhrase#.'
+]
+
+var relationship = [
+  '#relationAdjective# #relation#',
 ]
 
 var subjectClauses = [
@@ -107,7 +111,7 @@ var prepositions = [
   'beside',
   //'between',
   'by',
-  'down',
+  //'down',
   //'during',
   //'for',
   'from',
@@ -130,13 +134,13 @@ var prepositions = [
 var baseGrammar = {
   'dreamSequence': dreamSequences,
   'dream': dreams,
-  'noun': words.tagTree.noun,
+  'noun': words.tagTree.noun.concat(relationship),
   'nounness': nounness,
   'verb': words.tagTree.verb,
   'preposition': prepositions,
   'subjectClause': subjectClauses,
   'adjective': words.tagTree.adjective,
-  'countableNoun': words.taggedBy('noun', 'countable'),
+  'countableNoun': words.taggedBy('noun', 'countable').concat(relationship),
   'uncountableNoun': words.taggedBy('noun', 'uncountable'),
   'singularNounPhrase': singularNounPhrases,
   'pluralNounPhrase': pluralNounPhrases,
@@ -144,7 +148,9 @@ var baseGrammar = {
   'dreamAction': dreamAction,
   'dreamSubject': dreamSubject,
   'upVerb': words.taggedBy('verb', 'up'),
-  'downVerb': words.taggedBy('verb', 'down')
+  'downVerb': words.taggedBy('verb', 'down'),
+  'relationAdjective': words.taggedBy('adjective', 'relational'),
+  'relation': words.taggedBy('relation')
 };
 
 var mods = {...tracery.baseEngModifiers};

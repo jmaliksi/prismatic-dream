@@ -44,7 +44,7 @@ function taggedBy(...tags) {
   return words;
 }
 
-//stats(tagTree);
+stats(tagTree);
 //console.log(taggedBy('noun', 'uncountable'));
 
 module.exports = {

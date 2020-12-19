@@ -72,11 +72,13 @@
   ],
 
   "forgotten": [
-    "adjective"
+    "adjective",
+    "relational"
   ],
 
   "forlorn": [
-    "adjective"
+    "adjective",
+    "relational"
   ],
 
   "glowing": [
@@ -105,7 +107,8 @@
   ],
 
   "lost": [
-    "adjective"
+    "adjective",
+    "relational"
   ],
 
   "marble": [
@@ -123,7 +126,8 @@
   ],
 
   "old": [
-    "adjective"
+    "adjective",
+    "relational"
   ],
 
   "pale": [
@@ -332,7 +336,8 @@
   ],
 
   "friend": [
-    "noun",
+    "_noun",
+    "relation",
     "colorless",
     "countable"
   ],
@@ -364,7 +369,8 @@
   ],
 
   "love": [
-    "noun",
+    "_noun",
+    "relation",
     "uncountable",
     "red"
   ],
@@ -1077,7 +1083,8 @@
 
   "rival": [
     "_verb",
-    "noun",
+    "_noun",
+    "relation",
     "countable",
     "red"
   ],
@@ -1286,7 +1293,7 @@
     "blue"
   ],
 
-  "skies": [
+  "sky": [
     "noun",
     "uncountable",
     "blue",
@@ -1578,6 +1585,136 @@
 
   "glistening": [
     "adjective"
+  ],
+
+  "buzz": [
+    "verb"
+  ],
+
+  "malachite": [
+    "adjective",
+    "green"
+  ],
+
+  "pine": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "jungle": [
+    "green",
+    "noun",
+    "countable"
+  ],
+
+  "swamp": [
+    "green",
+    "noun",
+    "countable"
+  ],
+
+  "muck": [
+    "orange",
+    "noun",
+    "uncountable"
+  ],
+
+  "mud": [
+    "orange",
+    "noun",
+    "uncountable"
+  ],
+
+  "root": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "summer": [
+    "adjective",
+    "orange"
+  ],
+
+  "rusted": [
+    "adjective",
+    "orange",
+    "red"
+  ],
+
+  "copper": [
+    "adjective",
+    "orange"
+  ],
+
+  "midnight": [
+    "adjective",
+    "black"
+  ],
+
+  "shrouded": [
+    "adjective",
+    "purple",
+    "black"
+  ],
+
+  "strawberry": [
+    "noun",
+    "countable",
+    "adjective",
+    "red"
+  ],
+
+  "plush": [
+    "adjective",
+    "purple"
+  ],
+
+  "haunting": [
+    "purple",
+    "adjective"
+  ],
+
+  "hyacinth": [
+    "noun",
+    "countable",
+    "purple"
+  ],
+
+  "amethyst": [
+    "adjective",
+    "noun",
+    "countable",
+    "purple"
+  ],
+
+  "violet": [
+    "adjective",
+    "noun",
+    "countable",
+    "purple"
+  ],
+
+  "lavender": [
+    "adjective",
+    "noun",
+    "countable",
+    "purple"
+  ],
+
+  "quartz": [
+    "adjective",
+    "noun",
+    "uncountable",
+    "white"
+  ],
+
+  "whale": [
+    "noun",
+    "countable",
+    "black",
+    "blue"
   ]
 
 }
