@@ -1,6 +1,7 @@
 const tracery = require('tracery-grammar');
 const words = require('./words.js');
 const spectrum = require('./spectrum.js');
+const dreamer = require('./dreamer.js');
 
 var dreamSequences = [
   '#dream# #dream#',
@@ -18,7 +19,7 @@ var dreams = [
   'The #nounness# of #nounPhrase#.',
   '#subjectClause.capitalize#.',
   '#countableNoun.s.capitalize# #verb#, #countableNoun.s# #verb#, #countableNoun.s# #verb#.',
-  'The #noun# #verb.s#, the #noun# #verb.s#, the #noun# #verb.s#.',
+  //'The #noun# #verb.s#, the #noun# #verb.s#, the #noun# #verb.s#.',
   'Memories of #nounPhrase#.',
   'Memories of #nounPhrase#, #verb.ing# #preposition# #nounPhrase#.',
   '#verb.ing.a.capitalize# #adjective# #countableNoun#.',
@@ -60,10 +61,16 @@ var singularNounPhrases = [
 var pluralNounPhrases = [
   '#countableNoun.s#',
   '#adjective# #countableNoun.s#',
+  '#countableNoun.s#',
+  '#adjective# #countableNoun.s#',
+  '#countableNoun.s#',
+  '#adjective# #countableNoun.s#',
   'some #countableNoun.s#',
+  'a few #countableNoun.s#',
   'many #countableNoun.s#',
   'several #countableNoun.s#',
   'inummerable #countableNoun.s#',
+  'countless #countableNoun.s#',
 ];
 
 var nounness = [
@@ -153,6 +160,9 @@ mods.s = function(s) {
   if (s.length >= 3 && s.slice(-3) === 'man') {
     return s.slice(0, -3) + 'men';
   }
+  if (s.length >= 6 && s.slice(-6) === 'tomato') {
+    return s.slice(0, -6) + 'tomatoes';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -177,6 +187,8 @@ mods.sif = function(s) {
 }
 
 
+const readline = require('readline');
+
 var spectrumTags = {
   'black': 0.5,
   'white': 0.5,
@@ -189,61 +201,24 @@ var spectrumTags = {
 };
 var prevDream;
 var dir;
+var sleeper = new dreamer.Dreamer(baseGrammar, mods);
 
-for (var i = 0; i < 25; i++) {
-  var gram = {...baseGrammar};
-  gram['adjective'] = spectrum.filter(spectrumTags, gram['adjective']);
-  gram['noun'] = spectrum.filter(spectrumTags, gram['noun']);
-  gram['countableNoun'] = spectrum.filter(spectrumTags, gram['countableNoun']);
-  gram['uncountableNoun'] = spectrum.filter(spectrumTags, gram['uncountableNoun']);
-
-  var dreamSequence = '#dreamSequence#';
-  if (prevDream) {
-    dreamSequence = '#dir.capitalize#. #dreamAction# #dreamSequence#';
-    var clauses = spectrum.relevantClauses(prevDream, dir);
-    //console.log(clauses);
-    var up = (Math.random() * (clauses.up.length + clauses.down.length)) < clauses.up.length;
-    gram['action'] = words.taggedBy('verb', up ? 'up' : 'down');
-    gram['prevNoun'] = clauses.up.concat(clauses.down);
-    gram['dir'] = [dir];
-    gram['noun'] = gram['noun'].concat(words.taggedBy('noun', dir));
-    gram['countableNoun'] = gram['countableNoun'].concat(words.taggedBy('noun', 'countable', dir));
-    gram['uncountableNoun'] = gram['uncountableNoun'].concat(words.taggedBy('noun', 'uncountable', dir));
-  }
-
-  var grammar = tracery.createGrammar(gram);
-  grammar.addModifiers(mods);
-
-  var dream = grammar.expand(dreamSequence);
-
-  //console.log(spectrumTags);
-  console.log(dream.finishedText);
-
-  var dreamTags = spectrum.findTags(dream);
-  //console.log(dreamTags);
-  var actionTag = new Set();
-  for (const [phrase, tags] of Object.entries(dreamTags)) {
-    for (const tag of tags) {
-      actionTag.add(tag);
-    }
-    var converse = spectrum.converse(tags);
-    for (const tag of converse) {
-      actionTag.add(tag);
-    }
-    //console.log(phrase + ': ' + converse);
-  }
+function dreaming() {
+  prevDream = sleeper.dream(spectrumTags, prevDream, dir);
+  console.log(prevDream.finishedText);
   console.log('');
-
-  prevDream = dream;
-
-  actionTag = [...actionTag];
-  //console.log(actionTag);
-  dir = actionTag[Math.floor(Math.random() * actionTag.length)];
-  if (!dir) {
-    dir = Math.random() < .5 ? 'black' : 'white';
-  }
-  //console.log(dir);
-  spectrumTags = spectrum.move(spectrumTags, dir);
-
-  //console.log('');
+  rl.setPrompt("> ");
+  rl.prompt();
 }
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+rl.on('line', (ans) => {
+  dir = ans;
+  spectrumTags = spectrum.move(spectrumTags, dir);
+  dreaming();
+});
+
+dreaming();

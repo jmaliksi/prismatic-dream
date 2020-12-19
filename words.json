@@ -408,8 +408,6 @@
   "mountain": [
     "noun",
     "white",
-    "green",
-    "blue",
     "purple",
     "countable",
     "colorless"
@@ -843,9 +841,9 @@
     "up"
   ],
 
-  "thrive": [
-    "verb",
-    "up"
+  "strive": [
+    "_verb",
+    "_up"
   ],
 
   "tower": [
@@ -1278,8 +1276,8 @@
 
   "lawnmower": [
     "_noun",
-    "countable",
-    "green"
+    "_countable",
+    "_green"
   ],
 
   "lake": [
@@ -1288,7 +1286,7 @@
     "blue"
   ],
 
-  "sky": [
+  "skies": [
     "noun",
     "uncountable",
     "blue",
@@ -1307,13 +1305,13 @@
   ],
 
   "crisp": [
-    "adjective",
-    "blue"
+    "_adjective",
+    "_blue"
   ],
 
-  "water": [
+  "waters": [
     "noun",
-    "countable",
+    "uncountable",
     "blue"
   ],
 
@@ -1376,8 +1374,8 @@
 
   "warning": [
     "_noun",
-    "uncountable",
-    "yellow"
+    "_uncountable",
+    "_yellow"
   ],
 
   "citrus": [
@@ -1393,9 +1391,15 @@
 
   "beach": [
     "noun",
-    "uncountable",
+    "countable",
     "yellow",
     "blue"
+  ],
+
+  "dune": [
+    "noun",
+    "countable",
+    "yellow"
   ],
 
   "nightlight": [
@@ -1535,7 +1539,7 @@
 
   "library": [
     "noun",
-    "countable",
+    "uncountable",
     "yellow"
   ],
 
@@ -1556,6 +1560,24 @@
     "noun",
     "countable",
     "white"
+  ],
+
+  "ooze": [
+    "noun",
+    "countable",
+    "green",
+    "black"
+  ],
+
+  "egg": [
+    "noun",
+    "countable",
+    "white",
+    "yellow"
+  ],
+
+  "glistening": [
+    "adjective"
   ]
 
 }

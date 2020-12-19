@@ -121,6 +121,10 @@ function relevantClauses(trace, tag) {
   var downClauses = [];
   var colorTags = findTags(trace);
   for (const [phrase, tags] of Object.entries(colorTags)) {
+    if (tag === '*') {
+      upClauses.push(phrase);
+      continue;
+    }
     if (tags.includes(tag)) {
       upClauses.push(phrase);
     }
