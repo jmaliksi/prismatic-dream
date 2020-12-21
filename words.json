@@ -1715,6 +1715,973 @@
     "countable",
     "black",
     "blue"
-  ]
+  ],
 
+  "indombitable": [
+    "adjective"
+  ],
+
+  "dominating": [
+    "adjective"
+  ],
+
+  "regal": [
+    "adjective",
+    "purple"
+  ],
+
+  "golden": [
+    "adjective",
+    "yellow"
+  ],
+
+  "bloody": [
+    "adjective",
+    "red"
+  ],
+
+  "flushed": [
+    "adjective",
+    "red"
+  ],
+
+  "smoking": [
+    "adjective",
+    "white"
+  ],
+
+  "cliff": [
+    "noun",
+    "countable",
+    "yellow",
+    "white"
+  ],
+
+  "sparrow": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "jay": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "robin": [
+    "noun",
+    "countable",
+    "red"
+  ],
+
+  "bat": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "sycamore": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "bicycle": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "log": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "climb": [
+    "verb",
+    "up"
+  ],
+
+  "meteor": [
+    "noun",
+    "countable",
+    "black",
+    "orange"
+  ],
+
+  "planet": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "kudzu": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "fish": [
+    "noun",
+    "countable",
+    "blue",
+    "yellow",
+    "purple"
+  ],
+
+  "gull": [
+    "noun",
+    "countable",
+    "white"
+  ],
+
+  "albatross": [
+    "noun",
+    "countable",
+    "white",
+    "blue"
+  ],
+
+  "shoe": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "rock": [
+    "noun",
+    "countable",
+    "orange",
+    "black"
+  ],
+
+  "boulder": [
+    "noun",
+    "countable",
+    "orange",
+    "black"
+  ],
+
+  "stone": [
+    "noun",
+    "countable",
+    "orange",
+    "black"
+  ],
+
+  "fence": [
+    "noun",
+    "countable",
+    "white"
+  ],
+
+  "rolling": [
+    "adjective"
+  ],
+
+  "roll": [
+    "verb"
+  ],
+
+  "hill": [
+    "noun",
+    "countable",
+    "orange",
+    "green",
+    "yellow"
+  ],
+
+  "march": [
+    "verb"
+  ],
+
+  "bubble": [
+    "verb",
+    "noun",
+    "countable",
+    "blue",
+    "white"
+  ],
+
+  "boat": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "ship": [
+    "noun",
+    "countable",
+    "black",
+    "blue"
+  ],
+
+  "sail": [
+    "verb",
+    "up"
+  ],
+
+  "crest": [
+    "verb"
+  ],
+
+  "ash": [
+    "noun",
+    "countable",
+    "white"
+  ],
+
+  "observatory": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "bridge": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "shuttle": [
+    "noun",
+    "verb",
+    "countable",
+    "colorless"
+  ],
+
+  "squat": [
+    "verb",
+    "adjective"
+  ],
+
+  "striated": [
+    "adjective"
+  ],
+
+  "camera": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "clicking": [
+    "adjective"
+  ],
+
+  "buzzing": [
+    "adjective"
+  ],
+
+  "buzz": [
+    "verb"
+  ],
+
+  "click": [
+    "verb"
+  ],
+
+  "cannon": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "thunder": [
+    "verb",
+    "up"
+  ],
+
+  "round": [
+    "adjective"
+  ],
+
+  "weathered": [
+    "adjective"
+  ],
+
+  "tunnel": [
+    "noun",
+    "countable",
+    "verb",
+    "black"
+  ],
+
+  "dinosaur": [
+    "noun",
+    "countable",
+    "green",
+    "black"
+  ],
+
+  "reptile": [
+    "noun",
+    "countable",
+    "green",
+    "black"
+  ],
+
+  "lizard": [
+    "noun",
+    "countable",
+    "green",
+    "black"
+  ],
+
+  "plumed": [
+    "adjective"
+  ],
+
+  "bronze": [
+    "adjective",
+    "yellow"
+  ],
+
+  "brass": [
+    "adjective",
+    "yellow"
+  ],
+
+  "monkey": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "long": [
+    "adjective"
+  ],
+
+  "wide": [
+    "adjective"
+  ],
+
+  "writhing": [
+    "adjective"
+  ],
+
+  "writhe": [
+    "verb",
+    "down"
+  ],
+
+  "wiggle": [
+    "verb"
+  ],
+
+  "water": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "pour": [
+    "verb"
+  ],
+
+  "pike": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "hike": [
+    "verb"
+  ],
+
+  "folded": [
+    "adjective"
+  ],
+
+  "fold": [
+    "verb"
+  ],
+
+  "bone": [
+    "noun",
+    "countable",
+    "white"
+  ],
+
+  "skyscraper": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "valley": [
+    "noun",
+    "countable",
+    "green",
+    "yellow"
+  ],
+
+  "chipmunk": [
+    "noun",
+    "countable",
+    "green",
+    "orange"
+  ],
+
+  "squirrel": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "baleful": [
+    "adjective"
+  ],
+
+  "shark": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "corn": [
+    "noun",
+    "countable",
+    "yellow"
+  ],
+
+  "cornflower": [
+    "blue",
+    "purple",
+    "adjective",
+    "noun",
+    "countable"
+  ],
+
+  "goldenrod": [
+    "adjective",
+    "yellow"
+  ],
+
+  "gossamer": [
+    "adjective"
+  ],
+
+  "bluff": [
+    "noun",
+    "countable",
+    "white",
+    "yellow"
+  ],
+
+  "outcrop": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "red-dressed": [
+    "adjective",
+    "red"
+  ],
+
+  "black-clad": [
+    "adjective",
+    "black"
+  ],
+
+  "beatle": [
+    "noun",
+    "countable",
+    "blue",
+    "black"
+  ],
+
+  "scarab": [
+    "noun",
+    "countable",
+    "blue",
+    "black"
+  ],
+
+  "leaf": [
+    "noun",
+    "countable",
+    "green",
+    "orange",
+    "yellow",
+    "red"
+  ],
+
+  "kitten": [
+    "noun",
+    "countable",
+    "orange",
+    "black",
+    "yellow"
+  ],
+
+  "puppy": [
+    "noun",
+    "countable",
+    "orange",
+    "black",
+    "yellow"
+  ],
+
+  "abandoned": [
+    "adjective"
+  ],
+
+  "constellation": [
+    "noun",
+    "countable",
+    "blue",
+    "black"
+  ],
+
+  "card": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "flip": [
+    "verb"
+  ],
+
+  "stout": [
+    "adjective"
+  ],
+
+  "brood": [
+    "verb",
+    "down"
+  ],
+
+  "seafoam": [
+    "noun",
+    "white",
+    "uncountable"
+  ],
+
+  "cinnabar": [
+    "adjective",
+    "noun",
+    "red"
+  ],
+
+  "sulfurous": [
+    "adjective"
+  ],
+
+  "shamble": [
+    "verb",
+    "down"
+  ],
+
+  "caw": [
+    "verb"
+  ],
+
+  "reach": [
+    "verb"
+  ],
+
+  "thorned": [
+    "adjective"
+  ],
+
+  "spined": [
+    "adjective"
+  ],
+
+  "gallivant": [
+    "verb",
+    "up"
+  ],
+
+  "cut": [
+    "verb"
+  ],
+
+  "schooner": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "empty": [
+    "adjective"
+  ],
+
+  "copse": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "clearing": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "lot": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "structure": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "miasma": [
+    "noun",
+    "uncountable",
+    "colorless",
+    "purple"
+  ],
+
+  "storefront": [
+    "noun",
+    "countable",
+    "yellow",
+    "white",
+    "black"
+  ],
+
+  "shop": [
+    "noun",
+    "countable",
+    "yellow",
+    "white",
+    "black"
+  ],
+
+  "chicken": [
+    "countable",
+    "noun",
+    "white"
+  ],
+
+  "device": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "alien": [
+    "adjective"
+  ],
+
+  "geometric": [
+    "adjective"
+  ],
+
+  "ephemeral": [
+    "adjective"
+  ],
+
+  "unknown": [
+    "adjective"
+  ],
+
+  "writing": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "spindly": [
+    "adjective"
+  ],
+
+  "heart": [
+    "noun",
+    "countable",
+    "red"
+  ],
+
+  "beating": [
+    "adjective"
+  ],
+
+  "cup": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "pentacle": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "wand": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "spear": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "diamond": [
+    "adjective",
+    "noun",
+    "white"
+  ],
+
+  "overflow": [
+    "verb",
+    "up"
+  ],
+
+  "pyramid": [
+    "noun",
+    "countable",
+    "yellow"
+  ],
+
+  "well": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "bay": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "cove": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "desert": [
+    "noun",
+    "countable",
+    "yellow"
+  ],
+
+  "flatland": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "plain": [
+    "noun",
+    "countable",
+    "yellow",
+    "green"
+  ],
+
+  "savannah": [
+    "noun",
+    "countable",
+    "yellow"
+  ],
+
+  "rowboat": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "canoe": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "catamaran": [
+    "noun",
+    "countable",
+    "blue"
+  ],
+
+  "streetlight": [
+    "noun",
+    "countable",
+    "orange",
+    "yellow",
+    "black"
+  ],
+
+  "person": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "crowd": [
+    "noun",
+    "uncountable",
+    "colorless"
+  ],
+
+  "crowded": [
+    "adjective"
+  ],
+
+  "stairs": [
+    "noun",
+    "colorless",
+    "countable"
+  ],
+
+  "robot": [
+    "noun",
+    "countable",
+    "white",
+    "blue"
+  ],
+
+  "condor": [
+    "noun",
+    "countable",
+    "black"
+  ],
+
+  "rattlesnake": [
+    "noun",
+    "countable",
+    "green",
+    "black"
+  ],
+
+  "maraca": [
+    "countable",
+    "noun",
+    "orange"
+  ],
+
+  "reminisce": [
+    "verb"
+  ],
+
+  "wagon": [
+    "countable",
+    "noun",
+    "white"
+  ],
+
+  "monument": [
+    "countable",
+    "noun",
+    "colorless",
+    "black"
+  ],
+
+  "monumental": [
+    "adjective"
+  ],
+
+  "massive": [
+    "adjective"
+  ],
+
+  "miniscule": [
+    "adjective"
+  ],
+
+  "invisible": [
+    "adjective"
+  ],
+
+  "ornery": [
+    "adjective"
+  ],
+
+  "mourning": [
+    "adjective",
+    "black",
+    "blue"
+  ],
+
+  "furious": [
+    "adjective",
+    "red"
+  ],
+
+  "broken": [
+    "adjective"
+  ],
+
+  "break": [
+    "verb",
+    "down"
+  ],
+
+  "branch": [
+    "noun",
+    "countable",
+    "green",
+    "verb"
+  ],
+
+  "wild": [
+    "adjective"
+  ],
+
+  "balloon": [
+    "noun",
+    "countable",
+    "red"
+  ],
+
+  "poppy": [
+    "noun",
+    "countable",
+    "red",
+    "orange"
+  ],
+
+  "bench": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "stump": [
+    "noun",
+    "countable",
+    "green"
+  ],
+
+  "mushroom": [
+    "noun",
+    "countable",
+    "white",
+    "red",
+    "black"
+  ],
+
+  "clatter": [
+    "verb"
+  ],
+
+  "bead": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "drop": [
+    "verb",
+    "down"
+  ],
+
+  "drip": [
+    "verb"
+  ]
 }

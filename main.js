@@ -174,6 +174,9 @@ mods.s = function(s) {
   if (s.length >= 5 && s.slice(-5) === 'knife') {
     return s.slice(0, -5) + 'knives';
   }
+  if (s.length >= 6 && s.slice(-6) === 'person') {
+    return s.slice(0, -6) + 'people';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
