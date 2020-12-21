@@ -2683,5 +2683,200 @@
 
   "drip": [
     "verb"
+  ],
+
+  "about": [
+    "preposition"
+  ],
+
+  "above": [
+    "preposition"
+  ],
+
+  "across": [
+    "preposition"
+  ],
+
+  "after": [
+    "preposition"
+  ],
+
+  "against": [
+    "preposition"
+  ],
+
+  "among": [
+    "preposition"
+  ],
+
+  "around": [
+    "preposition"
+  ],
+
+  "at": [
+    "preposition"
+  ],
+
+  "before": [
+    "preposition"
+  ],
+
+  "behind": [
+    "preposition"
+  ],
+
+  "below": [
+    "preposition"
+  ],
+
+  "beside": [
+    "preposition"
+  ],
+
+  "between": [
+    "_preposition"
+  ],
+
+  "by": [
+    "preposition"
+  ],
+
+  "down": [
+    "_preposition"
+  ],
+
+  "during": [
+    "_preposition"
+  ],
+
+  "for": [
+    "_preposition"
+  ],
+
+  "from": [
+    "preposition"
+  ],
+
+  "in": [
+    "preposition"
+  ],
+
+  "inside": [
+    "preposition"
+  ],
+
+  "into": [
+    "preposition"
+  ],
+
+  "near": [
+    "preposition"
+  ],
+
+  "off": [
+    "preposition"
+  ],
+
+  "on": [
+    "preposition"
+  ],
+
+  "out of": [
+    "preposition"
+  ],
+
+  "over": [
+    "preposition"
+  ],
+
+  "through": [
+    "preposition"
+  ],
+
+  "to": [
+    "_preposition"
+  ],
+
+  "toward": [
+    "preposition"
+  ],
+
+  "under": [
+    "preposition"
+  ],
+
+  "up": [
+    "_preposition"
+  ],
+
+  "with": [
+    "_preposition"
+  ],
+
+  "coldness": [
+    "nounness"
+  ],
+
+  "sweetness": [
+    "nounness"
+  ],
+
+  "fickleness": [
+    "nounness"
+  ],
+
+  "serenity": [
+    "nounness"
+  ],
+
+  "quietness": [
+    "nounness"
+  ],
+
+  "warmth": [
+    "nounness"
+  ],
+
+  "heat": [
+    "nounness"
+  ],
+
+  "brightness": [
+    "nounness"
+  ],
+
+  "darkness": [
+    "nounness"
+  ],
+
+  "quiet": [
+    "nounness"
+  ],
+
+  "rage": [
+    "nounness"
+  ],
+
+  "passion": [
+    "nounness"
+  ],
+
+  "love": [
+    "nounness"
+  ],
+
+  "sadness": [
+    "nounness"
+  ],
+
+  "wisdom": [
+    "nounness"
+  ],
+
+  "folly": [
+    "nounness"
   ]
+
+
+
 }
