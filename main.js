@@ -2,6 +2,19 @@ const words = require('./words.js');
 const spectrum = require('./spectrum.js');
 const dreamer = require('./dreamer.js');
 const readline = require('readline');
+const fs = require('fs');
+
+/*
+var grammarJson = {...words.baseGrammar}
+grammarJson['verbing'] = grammarJson['verb'].map(words.mods.ing)
+var grammarStr = JSON.stringify(grammarJson);
+grammarStr = grammarStr.replace('verb.ing', 'verbing');
+fs.writeFile('./grammar.json', grammarStr, 'utf8', (err) => {
+  if (err) {
+    console.log(`Error writing file: ${err}`);
+  }
+});
+*/
 
 var spectrumTags = {
   'black': 0.5,
