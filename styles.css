@@ -9,8 +9,6 @@
   --inColor: #ddd;
   --outColor: #555;
   background-image: radial-gradient(var(--inColor), var(--outColor));
-  padding-top: 1em;
-  padding-bottom: 1em;
 }
 
 .dreamBox {
@@ -18,7 +16,6 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  flex: 1;
 }
 
 #dreamOverlay {
@@ -92,7 +89,7 @@ body {
   transition: .5s;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 1000px) {
   .textContainer {
     width: 50%;
   }
