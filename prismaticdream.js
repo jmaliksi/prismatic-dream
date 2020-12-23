@@ -75,7 +75,8 @@ function setBgColor() {
   const dreamBox = document.getElementById('dream');
   dreamBox.style.setProperty('--outColor', `rgb(${outColor[0]},${outColor[1]},${outColor[2]})`);
   dreamBox.style.setProperty('--inColor', `rgb(${inColor[0]},${inColor[1]},${inColor[2]})`);
-
+  const body = document.getElementById('body');
+  body.style.setProperty('--outColor', `rgb(${outColor[0]},${outColor[1]},${outColor[2]})`);
 }
 
 function setTextColor() {
