@@ -2953,6 +2953,22 @@
     "noun",
     "countable",
     "colorless"
+  ],
+
+  "thrum": [
+    "verb",
+    "up"
+  ],
+
+  "hum": [
+    "verb",
+    "up"
+  ],
+
+  "hummingbird": [
+    "noun",
+    "countable",
+    "green"
   ]
 
 }

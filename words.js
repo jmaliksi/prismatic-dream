@@ -212,6 +212,9 @@ mods.ing = function(s) {
   else if (s.slice(-4) === 'trot') {
     return s.slice(0, -4) + 'trotting';
   }
+  else if (s.slice(-2) === 'um') {
+    return s.slice(0, -2) + 'umming';
+  }
   return s + 'ing';
 }
 mods.sif = function(s) {
