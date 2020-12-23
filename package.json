@@ -7,6 +7,7 @@
   "author": "joe <joe.maliksi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ryb2rgb": "0.0.0",
     "tracery-grammar": "^2.7.4"
   }
 }

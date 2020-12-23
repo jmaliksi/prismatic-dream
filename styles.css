@@ -1,0 +1,61 @@
+#dream {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --inColor: #ddd;
+  --outColor: #555;
+  background-image: radial-gradient(var(--inColor), var(--outColor));
+}
+
+.dreamBox {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#dreamOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  --inColor0: #fff;
+  --outColor0: #000;
+  background-image: radial-gradient(var(--inColor0), var(--outColor0));
+  opacity: 1;
+}
+
+#dreamOverlay.fadeOut {
+  opacity: 0;
+  transition: 2s;
+}
+
+body {
+  margin: 0;
+}
+
+@keyframes shiftDream {
+  from {
+    background-image: radial-gradient(#ddd, #555);
+  }
+  to {
+    background-image: radial-gradient(#555, #ddd);
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+#dreamText {
+  --textColor: #000;
+  color: var(--textColor);
+  font-size: 2em;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.textContainer {
+  width: 50%;
+  max-width: 50em;
+  min-width: 25em;
+  text-align: center;
+}

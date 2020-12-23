@@ -3,8 +3,13 @@ const spectrum = require('./spectrum.js');
 const dreamer = require('./dreamer.js');
 const readline = require('readline');
 const fs = require('fs');
-
 /*
+const ryb2rgb = require('ryb2rgb');
+console.log(ryb2rgb([255,0,0]));
+console.log(ryb2rgb([0,255,255]));
+console.log(ryb2rgb([0,0,0]));
+console.log(ryb2rgb([0,0,0]));
+
 var grammarJson = {...words.baseGrammar}
 grammarJson['verbing'] = grammarJson['verb'].map(words.mods.ing)
 var grammarStr = JSON.stringify(grammarJson);

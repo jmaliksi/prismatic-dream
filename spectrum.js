@@ -1,4 +1,5 @@
 const words = require('./words.js');
+const ryb2rgb = require('ryb2rgb');
 
 const spectrumDefinition = [
   ['black', 'white'],
@@ -17,6 +18,7 @@ const spectrumTags = [
   'yellow',
   'purple',
 ];
+const THRESHOLD = 0.1;
 
 function move(spec, direction) {
   var copy = {...spec};
@@ -93,7 +95,7 @@ function filter(spec, wordList) {
       if (!tags.has(s)) {
         continue;
       }
-      if (spec[s] > 0.1) {
+      if (spec[s] > THRESHOLD) {
         return true;
       }
     }
@@ -138,11 +140,59 @@ function relevantClauses(trace, tag) {
   };
 }
 
+function getHexColor(spectrumTags) {
+  var r = 0;
+  var y = 0;
+  var b = 0;
+
+  if (spectrumTags['red'] > THRESHOLD) {
+    r += spectrumTags['red'];
+  }
+  if (spectrumTags['green'] > THRESHOLD) {
+    y += spectrumTags['green'];
+    b += spectrumTags['green'];
+  }
+
+  if (spectrumTags['yellow'] > THRESHOLD) {
+    y += spectrumTags['yellow'];
+  }
+  if (spectrumTags['purple'] > THRESHOLD) {
+    r += spectrumTags['purple'];
+    b += spectrumTags['purple'];
+  }
+
+  if (spectrumTags['blue'] > THRESHOLD) {
+    b += spectrumTags['blue'];
+  }
+  if (spectrumTags['orange'] > THRESHOLD) {
+    r += spectrumTags['orange'];
+    y += spectrumTags['orange'];
+  }
+
+  var max = Math.max(r, y, b);
+  //console.log(r + " " + y + " " + b);
+  //console.log(spectrumTags);
+  //console.log(max);
+
+  return ryb2rgb([
+    Math.floor(r / max * 255),
+    Math.floor(y / max * 255),
+    Math.floor(b / max * 255)
+  ]);
+}
+
+function getBrightness(spectrumTags) {
+  var gray = 255 - Math.floor((spectrumTags['black'] - spectrumTags['white'] + 1) / 2 * 255);
+  return [gray, gray, gray]
+}
+
 module.exports = {
   'findTags': findTags,
   'converse': converse,
   'move': move,
   'filter': filter,
   'deriveDirections': deriveDirections,
-  'relevantClauses': relevantClauses
+  'relevantClauses': relevantClauses,
+  'getHexColor': getHexColor,
+  'getBrightness': getBrightness
 };

@@ -1316,12 +1316,6 @@
     "_blue"
   ],
 
-  "waters": [
-    "noun",
-    "uncountable",
-    "blue"
-  ],
-
   "sad": [
     "adjective",
     "blue"
@@ -1866,6 +1860,7 @@
 
   "stone": [
     "noun",
+    "adjective",
     "countable",
     "orange",
     "black"
@@ -2187,7 +2182,7 @@
     "black"
   ],
 
-  "beatle": [
+  "beetle": [
     "noun",
     "countable",
     "blue",
@@ -2875,8 +2870,29 @@
 
   "folly": [
     "nounness"
+  ],
+
+  "soft": [
+    "adjective"
+  ],
+
+  "glassy": [
+    "adjective"
+  ],
+
+  "glass": [
+    "adjective",
+    "blue"
+  ],
+
+  "window": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "furtive": [
+    "adjective"
   ]
-
-
 
 }
