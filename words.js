@@ -220,7 +220,11 @@ mods.ing = function(s) {
 mods.sif = function(s) {
   s2 = s.split(" ");
   var noun = s2[s2.length - 2];
-  if (noun[noun.length - 1] !== 's' || noun === 'grass') {
+  switch (noun) {
+    case 'grass': return mod.s(s);
+    case 'mice': return s;
+  }
+  if (noun[noun.length - 1] !== 's') {
     return mods.s(s);
   }
   return s;

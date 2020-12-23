@@ -9,6 +9,8 @@
   --inColor: #ddd;
   --outColor: #555;
   background-image: radial-gradient(var(--inColor), var(--outColor));
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .dreamBox {
@@ -40,7 +42,7 @@ body {
   padding: 0;
   border: 0;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  /*min-height: -webkit-fill-available;*/
   width: 100vw;
 }
 
