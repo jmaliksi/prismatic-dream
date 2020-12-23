@@ -4,14 +4,14 @@ const spectrum = require('./spectrum.js');
 const dreamer = require('./dreamer.js');
 
 var spectrumTags = {
-  'black': Math.random(),
-  'white': Math.random(),
-  'red': Math.random(),
-  'green': Math.random(),
-  'blue': Math.random(),
-  'orange': Math.random(),
-  'yellow': Math.random(),
-  'purple': Math.random()
+  'black': Math.random() * .5,
+  'white': Math.random() * .5,
+  'red': Math.random() * .5,
+  'green': Math.random() * .5,
+  'blue': Math.random() * .5,
+  'orange': Math.random() * .5,
+  'yellow': Math.random() * .5,
+  'purple': Math.random() * .5
 };
 var prevDream;
 var dir;
@@ -31,6 +31,7 @@ function dream(d) {
   dir = d;
 
   spectrumTags = spectrum.move(spectrumTags, dir);
+  console.log(spectrumTags);
   var d = dreaming();
   setBgColor();
   setTextColor();
@@ -93,6 +94,7 @@ function initDream() {
   const dreamText = document.getElementById('dreamText');
   setOverlayColor();
   setBgColor();
+  setTextColor();
   dreamText.textContent = dreaming();
 }
 
@@ -154,6 +156,10 @@ class Dreamer {
       }
       gram['dreamAction' + index] = actions;
       scenes.push('#dreamAction' + index + '#');
+    }
+    while (scenes.length > 3) {
+      const idx = Math.floor(Math.random() * scenes.length);
+      scenes = scenes.splice(0, idx).concat(scenes.splice(idx + 1));
     }
 
     return {
@@ -1147,10 +1153,10 @@ function move(spec, direction) {
   var copy = {...spec};
   var conv = converse([direction])[0];
   for (const k in copy) {
-    copy[k] = copy[k] * .8;
+    copy[k] = copy[k] * .66;
   }
-  copy[direction] = 1.0;
-  copy[conv] = 0.0;
+  copy[direction] = Math.min(copy[direction] + 0.2, 1.0);
+  copy[conv] = Math.max(copy[conv] - 0.2, 0.0);
   return copy;
 }
 
@@ -1267,7 +1273,7 @@ function getHexColor(spectrumTags) {
   var r = 0;
   var y = 0;
   var b = 0;
-
+  /*
   if (spectrumTags['red'] > THRESHOLD) {
     r += spectrumTags['red'];
   }
@@ -1291,6 +1297,18 @@ function getHexColor(spectrumTags) {
     r += spectrumTags['orange'];
     y += spectrumTags['orange'];
   }
+  */
+  r += spectrumTags['red'];
+  y += spectrumTags['green'];
+  b += spectrumTags['green'];
+
+  y += spectrumTags['yellow'];
+  r += spectrumTags['purple'];
+  b += spectrumTags['purple'];
+
+  b += spectrumTags['blue'];
+  r += spectrumTags['orange'];
+  y += spectrumTags['orange'];
 
   var max = Math.max(r, y, b);
   //console.log(r + " " + y + " " + b);
@@ -1665,7 +1683,7 @@ module.exports={
     "countable"
   ],
 
-  "ground": [
+  "the ground": [
     "noun",
     "colorless",
     "uncountable"
@@ -2467,7 +2485,7 @@ module.exports={
 
   "wind": [
     "noun",
-    "uncountable",
+    "countable",
     "blue"
   ],
 
@@ -2746,9 +2764,9 @@ module.exports={
   ],
 
   "cheese": [
-    "noun",
-    "countable",
-    "yellow"
+    "_noun",
+    "_countable",
+    "_yellow"
   ],
 
   "royal": [
@@ -3323,7 +3341,7 @@ module.exports={
   "tunnel": [
     "noun",
     "countable",
-    "verb",
+    "_verb",
     "black"
   ],
 
@@ -3490,9 +3508,9 @@ module.exports={
   ],
 
   "outcrop": [
-    "noun",
-    "countable",
-    "colorless"
+    "_noun",
+    "_countable",
+    "_colorless"
   ],
 
   "red-dressed": [
@@ -3582,7 +3600,7 @@ module.exports={
 
   "cinnabar": [
     "adjective",
-    "noun",
+    "_noun",
     "red"
   ],
 
@@ -3851,7 +3869,7 @@ module.exports={
     "adjective"
   ],
 
-  "stairs": [
+  "stair": [
     "noun",
     "colorless",
     "countable"
@@ -4273,7 +4291,7 @@ function taggedBy(...tags) {
 var dreamSequences = [
   '#dream# #dream#',
   '#dream# #dream# #dream#',
-  '#dream# #dream# #dream# #dream#',
+  //'#dream# #dream# #dream# #dream#',
   //'#dream#\n #dream#\n #dream#\n #dream#\n #dream#',
 ];
 
@@ -4317,10 +4335,10 @@ var singularNounPhrases = [
   '#uncountableNoun#',
   '#uncountableNoun#',
   //'#adjective# #uncountableNoun#',
-  'the #noun#',
-  'the #noun#',
-  'the #adjective# #noun#',
-  'the #adjective# #noun#',
+  //'the #noun#',
+  //'the #noun#',
+  //'the #adjective# #noun#',
+  //'the #adjective# #noun#',
   '#countableNoun.a#',
   '#countableNoun.a#',
   '#adjective.a# #noun#',
@@ -4387,8 +4405,11 @@ mods.s = function(s) {
   if (s.length >= 5 && s.slice(-5) === 'knife') {
     return s.slice(0, -5) + 'knives';
   }
-  if (s.length >= 5 && s.slice(-5) === 'person') {
-    return s.slice(0, -5) + 'knives';
+  if (s.length >= 6 && s.slice(-6) === 'person') {
+    return s.slice(0, -6) + 'people';
+  }
+  if (s.charAt(s.length - 1) === 'z') {
+    return s + 'es';
   }
   return originalSMod(s);
 };

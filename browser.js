@@ -3,14 +3,14 @@ const spectrum = require('./spectrum.js');
 const dreamer = require('./dreamer.js');
 
 var spectrumTags = {
-  'black': Math.random(),
-  'white': Math.random(),
-  'red': Math.random(),
-  'green': Math.random(),
-  'blue': Math.random(),
-  'orange': Math.random(),
-  'yellow': Math.random(),
-  'purple': Math.random()
+  'black': Math.random() * .5,
+  'white': Math.random() * .5,
+  'red': Math.random() * .5,
+  'green': Math.random() * .5,
+  'blue': Math.random() * .5,
+  'orange': Math.random() * .5,
+  'yellow': Math.random() * .5,
+  'purple': Math.random() * .5
 };
 var prevDream;
 var dir;
@@ -30,6 +30,7 @@ function dream(d) {
   dir = d;
 
   spectrumTags = spectrum.move(spectrumTags, dir);
+  console.log(spectrumTags);
   var d = dreaming();
   setBgColor();
   setTextColor();
@@ -92,6 +93,7 @@ function initDream() {
   const dreamText = document.getElementById('dreamText');
   setOverlayColor();
   setBgColor();
+  setTextColor();
   dreamText.textContent = dreaming();
 }
 

@@ -49,6 +49,10 @@ class Dreamer {
       gram['dreamAction' + index] = actions;
       scenes.push('#dreamAction' + index + '#');
     }
+    while (scenes.length > 3) {
+      const idx = Math.floor(Math.random() * scenes.length);
+      scenes = scenes.splice(0, idx).concat(scenes.splice(idx + 1));
+    }
 
     return {
       'grammar': gram,

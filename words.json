@@ -342,7 +342,7 @@
     "countable"
   ],
 
-  "ground": [
+  "the ground": [
     "noun",
     "colorless",
     "uncountable"
@@ -1144,7 +1144,7 @@
 
   "wind": [
     "noun",
-    "uncountable",
+    "countable",
     "blue"
   ],
 
@@ -1423,9 +1423,9 @@
   ],
 
   "cheese": [
-    "noun",
-    "countable",
-    "yellow"
+    "_noun",
+    "_countable",
+    "_yellow"
   ],
 
   "royal": [
@@ -2000,7 +2000,7 @@
   "tunnel": [
     "noun",
     "countable",
-    "verb",
+    "_verb",
     "black"
   ],
 
@@ -2167,9 +2167,9 @@
   ],
 
   "outcrop": [
-    "noun",
-    "countable",
-    "colorless"
+    "_noun",
+    "_countable",
+    "_colorless"
   ],
 
   "red-dressed": [
@@ -2259,7 +2259,7 @@
 
   "cinnabar": [
     "adjective",
-    "noun",
+    "_noun",
     "red"
   ],
 
@@ -2528,7 +2528,7 @@
     "adjective"
   ],
 
-  "stairs": [
+  "stair": [
     "noun",
     "colorless",
     "countable"

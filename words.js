@@ -50,7 +50,7 @@ function taggedBy(...tags) {
 var dreamSequences = [
   '#dream# #dream#',
   '#dream# #dream# #dream#',
-  '#dream# #dream# #dream# #dream#',
+  //'#dream# #dream# #dream# #dream#',
   //'#dream#\n #dream#\n #dream#\n #dream#\n #dream#',
 ];
 
@@ -94,10 +94,10 @@ var singularNounPhrases = [
   '#uncountableNoun#',
   '#uncountableNoun#',
   //'#adjective# #uncountableNoun#',
-  'the #noun#',
-  'the #noun#',
-  'the #adjective# #noun#',
-  'the #adjective# #noun#',
+  //'the #noun#',
+  //'the #noun#',
+  //'the #adjective# #noun#',
+  //'the #adjective# #noun#',
   '#countableNoun.a#',
   '#countableNoun.a#',
   '#adjective.a# #noun#',
@@ -164,8 +164,11 @@ mods.s = function(s) {
   if (s.length >= 5 && s.slice(-5) === 'knife') {
     return s.slice(0, -5) + 'knives';
   }
-  if (s.length >= 5 && s.slice(-5) === 'person') {
-    return s.slice(0, -5) + 'knives';
+  if (s.length >= 6 && s.slice(-6) === 'person') {
+    return s.slice(0, -6) + 'people';
+  }
+  if (s.charAt(s.length - 1) === 'z') {
+    return s + 'es';
   }
   return originalSMod(s);
 };

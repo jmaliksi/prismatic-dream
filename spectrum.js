@@ -24,10 +24,10 @@ function move(spec, direction) {
   var copy = {...spec};
   var conv = converse([direction])[0];
   for (const k in copy) {
-    copy[k] = copy[k] * .8;
+    copy[k] = copy[k] * .66;
   }
-  copy[direction] = 1.0;
-  copy[conv] = 0.0;
+  copy[direction] = Math.min(copy[direction] + 0.2, 1.0);
+  copy[conv] = Math.max(copy[conv] - 0.2, 0.0);
   return copy;
 }
 
@@ -144,7 +144,7 @@ function getHexColor(spectrumTags) {
   var r = 0;
   var y = 0;
   var b = 0;
-
+  /*
   if (spectrumTags['red'] > THRESHOLD) {
     r += spectrumTags['red'];
   }
@@ -168,6 +168,18 @@ function getHexColor(spectrumTags) {
     r += spectrumTags['orange'];
     y += spectrumTags['orange'];
   }
+  */
+  r += spectrumTags['red'];
+  y += spectrumTags['green'];
+  b += spectrumTags['green'];
+
+  y += spectrumTags['yellow'];
+  r += spectrumTags['purple'];
+  b += spectrumTags['purple'];
+
+  b += spectrumTags['blue'];
+  r += spectrumTags['orange'];
+  y += spectrumTags['orange'];
 
   var max = Math.max(r, y, b);
   //console.log(r + " " + y + " " + b);

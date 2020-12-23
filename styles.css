@@ -1,5 +1,6 @@
 #dream {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   --inColor: #ddd;
@@ -58,4 +59,16 @@ body {
   max-width: 50em;
   min-width: 25em;
   text-align: center;
+}
+
+#buttons {
+  z-index: 100;
+  margin: 2em;
+}
+
+#buttons button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nanum Myeongjo', serif;
 }
