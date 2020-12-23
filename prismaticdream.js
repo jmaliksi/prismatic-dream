@@ -4521,6 +4521,12 @@ mods.s = function(s) {
   if (s.length >= 4 && s.slice(-4) === 'leaf') {
     return s.slice(0, -4) + 'leaves';
   }
+  if (s.length >= 5 && s.slice(-5) === 'froth') {
+    return s.slice(0, -5) + 'froths';
+  }
+  if (s.length >= 9 && s.slice(-9) === 'hyacinth') {
+    return s.slice(0, -5) + 'hyacinths';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -4556,8 +4562,6 @@ mods.sif = function(s) {
   switch (noun) {
     case 'mice': return s;
     case 'corn': return s;
-    case 'hyacinth': return 'hyacinths';
-    case 'froth': return 'froths';
     case 'albatross':
     case 'grass': return mod.s(s);
   }
