@@ -63,6 +63,8 @@ body {
 .textContainer {
   text-align: center;
   padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #buttons {
@@ -98,4 +100,21 @@ body {
   #buttons button {
     font-size: .9em;
   }
+}
+
+.footer {
+  margin-bottom: 1em;
+}
+
+.footer a {
+  color: #fff;
+  font-size: .8em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+  justify-content: center;
 }

@@ -104,3 +104,4 @@ dist
 .tern-port
 
 grammar.json
+.DS_Store

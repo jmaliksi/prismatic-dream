@@ -27,18 +27,23 @@
 
 <body onload="prismaticdream.initDream()" id="body">
   <div id="dream" class="dreamBox">
-    <div class="textContainer">
-      <span id="dreamText"></span>
+    <div class="content">
+      <div class="textContainer">
+        <span id="dreamText"></span>
+      </div>
+      <div id="buttons">
+        <button type="button" onclick="prismaticdream.dream('black')" style="--bg:black">Black</button>
+        <button type="button" onclick="prismaticdream.dream('white')" style="--bg:white">White</button>
+        <button type="button" onclick="prismaticdream.dream('red')" style="--bg:red">Red</button>
+        <button type="button" onclick="prismaticdream.dream('green')" style="--bg:green">Green</button>
+        <button type="button" onclick="prismaticdream.dream('yellow')" style="--bg:yellow">Yellow</button>
+        <button type="button" onclick="prismaticdream.dream('purple')" style="--bg:purple">Purple</button>
+        <button type="button" onclick="prismaticdream.dream('blue')" style="--bg:blue">Blue</button>
+        <button type="button" onclick="prismaticdream.dream('orange')" style="--bg:orange">Orange</button>
+      </div>
     </div>
-    <div id="buttons">
-      <button type="button" onclick="prismaticdream.dream('black')" style="--bg:black">Black</button>
-      <button type="button" onclick="prismaticdream.dream('white')" style="--bg:white">White</button>
-      <button type="button" onclick="prismaticdream.dream('red')" style="--bg:red">Red</button>
-      <button type="button" onclick="prismaticdream.dream('green')" style="--bg:green">Green</button>
-      <button type="button" onclick="prismaticdream.dream('yellow')" style="--bg:yellow">Yellow</button>
-      <button type="button" onclick="prismaticdream.dream('purple')" style="--bg:purple">Purple</button>
-      <button type="button" onclick="prismaticdream.dream('blue')" style="--bg:blue">Blue</button>
-      <button type="button" onclick="prismaticdream.dream('orange')" style="--bg:orange">Orange</button>
+    <div class="footer">
+      <a href="https://github.com/jmaliksi/prismatic-dream" target="_blank">GitHub</a>
     </div>
   </div>
   <div id="dreamOverlay" class="dreamBox"></div>

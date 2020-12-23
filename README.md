@@ -1,6 +1,8 @@
 # prismatic-dream
 A dream without a dream.
 
+https://jmaliksi.github.io/prismatic-dream/
+
 # installation
 `npm install`
 
