@@ -67,7 +67,8 @@ var dreams = [
   'Memories of #nounPhrase#.',
   'Memories of #nounPhrase#, #verb.ing# #preposition# #nounPhrase#.',
   '#describedNoun.capitalize#.',
-  'What #verb.s# #preposition# #nounPhrase#?'
+  'What #verb.s# #preposition# #pluralNounPhrase#?',
+  'What #verb.s# #preposition# #singularNounPhrase#?'
 ];
 
 var dreamSubject = ['#prevNoun.capitalize# #action#'];
