@@ -67,8 +67,19 @@ body {
 }
 
 #buttons button {
-  background: white;
-  border: none;
+  background: #fff;
+  color: #000;
   cursor: pointer;
+  border-color: #fff;
+  border-width: 1px;
   font-family: 'Nanum Myeongjo', serif;
+}
+
+#buttons button:hover {
+  --bg: white;
+  color: var(--bg);
+  border-color: var(--bg);
+  border-width: 1px;
+  background: rgba(125, 125, 125, 0);
+  transition: .5s;
 }
