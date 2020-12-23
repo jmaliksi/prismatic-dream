@@ -191,6 +191,9 @@ mods.s = function(s) {
   if (s.length >= 4 && s.slice(-4) === 'corn') {
     return s.slice(0, -4) + 'corn';
   }
+  if (s.length >= 4 && s.slice(-4) === 'leaf') {
+    return s.slice(0, -4) + 'leaves';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
