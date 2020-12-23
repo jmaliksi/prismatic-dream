@@ -217,7 +217,7 @@ mods.ing = function(s) {
 mods.sif = function(s) {
   s2 = s.split(" ");
   var noun = s2[s2.length - 2];
-  if (noun[noun.length - 1] !== 's') {
+  if (noun[noun.length - 1] !== 's' || noun === 'grass') {
     return mods.s(s);
   }
   return s;
