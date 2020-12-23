@@ -23,6 +23,7 @@
   --outColor0: #000;
   background-image: radial-gradient(var(--inColor0), var(--outColor0));
   opacity: 1;
+  pointer-events: none;
 }
 
 #dreamOverlay.fadeOut {
@@ -62,7 +63,6 @@ body {
 }
 
 #buttons {
-  z-index: 100;
   margin: 2em;
 }
 
