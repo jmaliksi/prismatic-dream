@@ -2370,8 +2370,8 @@ module.exports={
   ],
 
   "active": [
-    "red",
-    "adjective"
+    "_red",
+    "_adjective"
   ],
 
   "plentiful": [
@@ -2528,7 +2528,7 @@ module.exports={
   ],
 
   "steam": [
-    "verb"
+    "_verb"
   ],
 
   "stoplight": [
@@ -4249,6 +4249,55 @@ module.exports={
     "countable",
     "yellow",
     "black"
+  ],
+
+  "yield": [
+    "verb",
+    "down"
+  ],
+
+  "torch": [
+    "noun",
+    "countable",
+    "orange"
+  ],
+
+  "wrought-iron": [
+    "adjective",
+    "black"
+  ],
+
+  "cage": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "gilded": [
+    "adjective",
+    "yellow"
+  ],
+
+  "engraved": [
+    "adjective"
+  ],
+
+  "cherished": [
+    "relational"
+  ],
+
+  "tired": [
+    "adjective"
+  ],
+
+  "ancient": [
+    "adjective"
+  ],
+
+  "clock": [
+    "noun",
+    "countable",
+    "colorless"
   ]
 
 }
@@ -4473,7 +4522,7 @@ mods.ing = function(s) {
 mods.sif = function(s) {
   s2 = s.split(" ");
   var noun = s2[s2.length - 2];
-  if (noun[noun.length - 1] !== 's') {
+  if (noun[noun.length - 1] !== 's' || noun === 'grass') {
     return mods.s(s);
   }
   return s;

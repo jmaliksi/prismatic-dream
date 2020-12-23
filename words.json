@@ -1025,8 +1025,8 @@
   ],
 
   "active": [
-    "red",
-    "adjective"
+    "_red",
+    "_adjective"
   ],
 
   "plentiful": [
@@ -1183,7 +1183,7 @@
   ],
 
   "steam": [
-    "verb"
+    "_verb"
   ],
 
   "stoplight": [
@@ -2909,6 +2909,50 @@
   "yield": [
     "verb",
     "down"
+  ],
+
+  "torch": [
+    "noun",
+    "countable",
+    "orange"
+  ],
+
+  "wrought-iron": [
+    "adjective",
+    "black"
+  ],
+
+  "cage": [
+    "noun",
+    "countable",
+    "colorless"
+  ],
+
+  "gilded": [
+    "adjective",
+    "yellow"
+  ],
+
+  "engraved": [
+    "adjective"
+  ],
+
+  "cherished": [
+    "relational"
+  ],
+
+  "tired": [
+    "adjective"
+  ],
+
+  "ancient": [
+    "adjective"
+  ],
+
+  "clock": [
+    "noun",
+    "countable",
+    "colorless"
   ]
 
 }
