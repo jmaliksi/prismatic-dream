@@ -188,6 +188,9 @@ mods.s = function(s) {
   if (s.length >= 8 && s.slice(-8) === 'savannah') {
     return s.slice(0, -8) + 'savannahs';
   }
+  if (s.length >= 4 && s.slice(-4) === 'corn') {
+    return s.slice(0, -4) + 'corn';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -222,7 +225,9 @@ mods.sif = function(s) {
   var noun = s2[s2.length - 2];
   switch (noun) {
     case 'mice': return s;
+    case 'corn': return s;
     case 'hyacinth': return 'hyacinths';
+    case 'froth': return 'froths';
     case 'albatross':
     case 'grass': return mod.s(s);
   }

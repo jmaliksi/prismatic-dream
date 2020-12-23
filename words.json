@@ -343,9 +343,9 @@
   ],
 
   "ground": [
-    "noun",
-    "colorless",
-    "countable"
+    "_noun",
+    "_colorless",
+    "_countable"
   ],
 
   "haze": [
@@ -2710,7 +2710,7 @@
   ],
 
   "at": [
-    "preposition"
+    "_preposition"
   ],
 
   "before": [
@@ -2969,6 +2969,11 @@
     "noun",
     "countable",
     "green"
+  ],
+
+  "paved": [
+    "adjective",
+    "black"
   ]
 
 }
