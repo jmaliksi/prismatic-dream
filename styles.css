@@ -1,4 +1,7 @@
 #dream {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +16,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  flex: 1;
 }
 
 #dreamOverlay {
@@ -33,6 +37,11 @@
 
 body {
   margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100vw;
 }
 
 @keyframes shiftDream {
@@ -44,10 +53,6 @@ body {
   }
 }
 
-body {
-  height: 100vh;
-}
-
 #dreamText {
   --textColor: #000;
   color: var(--textColor);
@@ -56,14 +61,13 @@ body {
 }
 
 .textContainer {
-  width: 50%;
-  max-width: 50em;
-  min-width: 25em;
   text-align: center;
+  padding: 1em;
 }
 
 #buttons {
   margin: 2em;
+  text-align: center;
 }
 
 #buttons button {
@@ -73,6 +77,8 @@ body {
   border-color: #fff;
   border-width: 1px;
   font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.5em;
+  margin: .2em;
 }
 
 #buttons button:hover {
@@ -82,4 +88,14 @@ body {
   border-width: 1px;
   background: rgba(125, 125, 125, 0);
   transition: .5s;
+}
+
+@media only screen and (min-width: 500px) {
+  .textContainer {
+    width: 50%;
+  }
+
+  #buttons button {
+    font-size: .7em;
+  }
 }
