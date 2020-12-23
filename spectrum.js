@@ -23,8 +23,12 @@ const THRESHOLD = 0.1;
 function move(spec, direction) {
   var copy = {...spec};
   var conv = converse([direction])[0];
+  var decay = .66;
+  if (direction == 'black') {
+    decay = 1.33;
+  }
   for (const k in copy) {
-    copy[k] = copy[k] * .66;
+    copy[k] = Math.min(Math.max(copy[k] * decay, 0.0), 1.0);
   }
   copy[direction] = Math.min(copy[direction] + 0.2, 1.0);
   copy[conv] = Math.max(copy[conv] - 0.2, 0.0);
@@ -57,7 +61,7 @@ function findTags(phrase) {
     return {};
   }
 
-  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase' || phrase.symbol === 'countableNoun') {
+  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase' || phrase.symbol === 'countableNoun' || phrase.symbol === 'describedNoun') {
     var tags = extractSpectrum(phrase);
     var res = {}
     res[phrase.finishedText] = [...tags];

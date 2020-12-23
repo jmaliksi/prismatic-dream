@@ -339,13 +339,13 @@
     "_noun",
     "relation",
     "colorless",
-    "countable"
+    "_countable"
   ],
 
-  "the ground": [
+  "ground": [
     "noun",
     "colorless",
-    "uncountable"
+    "countable"
   ],
 
   "haze": [
@@ -371,8 +371,9 @@
   "love": [
     "_noun",
     "relation",
-    "uncountable",
-    "red"
+    "_uncountable",
+    "red",
+    "nounness"
   ],
 
   "lightbulb": [
@@ -560,7 +561,7 @@
 
   "tide": [
     "noun",
-    "uncountable",
+    "countable",
     "blue",
     "white"
   ],
@@ -1540,7 +1541,7 @@
 
   "library": [
     "noun",
-    "uncountable",
+    "countable",
     "yellow"
   ],
 
@@ -2520,7 +2521,7 @@
 
   "crowd": [
     "noun",
-    "uncountable",
+    "countable",
     "colorless"
   ],
 
@@ -2856,10 +2857,6 @@
     "nounness"
   ],
 
-  "love": [
-    "nounness"
-  ],
-
   "sadness": [
     "nounness"
   ],
@@ -2893,6 +2890,20 @@
 
   "furtive": [
     "adjective"
+  ],
+
+  "lantern": [
+    "noun",
+    "countable",
+    "yellow",
+    "black"
+  ],
+
+  "lamp": [
+    "noun",
+    "countable",
+    "yellow",
+    "black"
   ]
 
 }

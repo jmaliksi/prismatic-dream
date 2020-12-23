@@ -66,7 +66,7 @@ var dreams = [
   //'The #noun# #verb.s#, the #noun# #verb.s#, the #noun# #verb.s#.',
   'Memories of #nounPhrase#.',
   'Memories of #nounPhrase#, #verb.ing# #preposition# #nounPhrase#.',
-  '#verb.ing.a.capitalize# #adjective# #countableNoun#.',
+  '#describedNoun.capitalize#.',
   'What #verb.s# #preposition# #nounPhrase#?'
 ];
 
@@ -103,7 +103,8 @@ var singularNounPhrases = [
   '#adjective.a# #noun#',
   '#adjective.a# #noun#',
   'some #uncountableNoun#',
-  'some #adjective# #uncountableNoun#'
+  'some #adjective# #uncountableNoun#',
+  '#relationship.a#',
 ];
 
 var pluralNounPhrases = [
@@ -124,13 +125,13 @@ var pluralNounPhrases = [
 var baseGrammar = {
   'dreamSequence': dreamSequences,
   'dream': dreams,
-  'noun': tagTree.noun.concat(relationship),
+  'noun': tagTree.noun,
   'nounness': tagTree.nounness,
   'verb': tagTree.verb,
   'preposition': tagTree.preposition,
   'subjectClause': subjectClauses,
   'adjective': tagTree.adjective,
-  'countableNoun': taggedBy('noun', 'countable').concat(relationship),
+  'countableNoun': taggedBy('noun', 'countable'),
   'uncountableNoun': taggedBy('noun', 'uncountable'),
   'singularNounPhrase': singularNounPhrases,
   'pluralNounPhrase': pluralNounPhrases,
@@ -140,7 +141,9 @@ var baseGrammar = {
   'upVerb': taggedBy('verb', 'up'),
   'downVerb': taggedBy('verb', 'down'),
   'relationAdjective': taggedBy('adjective', 'relational'),
-  'relation': tagTree.relation
+  'relation': tagTree.relation,
+  'describedNoun': '#verb.ing.a# #adjective# #countableNoun#',
+  'relationship': relationship
 };
 
 var mods = {...tracery.baseEngModifiers};
@@ -170,6 +173,12 @@ mods.s = function(s) {
   if (s.charAt(s.length - 1) === 'z') {
     return s + 'es';
   }
+  if (s.length >= 9 && s.slice(-9) === 'lightning') {
+    return s.slice(0, -9) + 'lightning';
+  }
+  if (s.length >= 8 && s.slice(-8) === 'savannah') {
+    return s.slice(0, -8) + 'savannahs';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -190,6 +199,9 @@ mods.ing = function(s) {
   }
   else if (s.slice(-3) === 'cut') {
     return s.slice(0, -3) + 'cutting';
+  }
+  else if (s.slice(-4) === 'trot') {
+    return s.slice(0, -4) + 'trotting';
   }
   return s + 'ing';
 }

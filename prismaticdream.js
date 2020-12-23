@@ -1152,8 +1152,12 @@ const THRESHOLD = 0.1;
 function move(spec, direction) {
   var copy = {...spec};
   var conv = converse([direction])[0];
+  var decay = .66;
+  if (direction == 'black') {
+    decay = 1.33;
+  }
   for (const k in copy) {
-    copy[k] = copy[k] * .66;
+    copy[k] = Math.min(Math.max(copy[k] * decay, 0.0), 1.0);
   }
   copy[direction] = Math.min(copy[direction] + 0.2, 1.0);
   copy[conv] = Math.max(copy[conv] - 0.2, 0.0);
@@ -1186,7 +1190,7 @@ function findTags(phrase) {
     return {};
   }
 
-  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase' || phrase.symbol === 'countableNoun') {
+  if (phrase.symbol === 'singularNounPhrase' || phrase.symbol === 'pluralNounPhrase' || phrase.symbol === 'countableNoun' || phrase.symbol === 'describedNoun') {
     var tags = extractSpectrum(phrase);
     var res = {}
     res[phrase.finishedText] = [...tags];
@@ -1680,13 +1684,13 @@ module.exports={
     "_noun",
     "relation",
     "colorless",
-    "countable"
+    "_countable"
   ],
 
-  "the ground": [
+  "ground": [
     "noun",
     "colorless",
-    "uncountable"
+    "countable"
   ],
 
   "haze": [
@@ -1712,8 +1716,9 @@ module.exports={
   "love": [
     "_noun",
     "relation",
-    "uncountable",
-    "red"
+    "_uncountable",
+    "red",
+    "nounness"
   ],
 
   "lightbulb": [
@@ -1901,7 +1906,7 @@ module.exports={
 
   "tide": [
     "noun",
-    "uncountable",
+    "countable",
     "blue",
     "white"
   ],
@@ -2881,7 +2886,7 @@ module.exports={
 
   "library": [
     "noun",
-    "uncountable",
+    "countable",
     "yellow"
   ],
 
@@ -3861,7 +3866,7 @@ module.exports={
 
   "crowd": [
     "noun",
-    "uncountable",
+    "countable",
     "colorless"
   ],
 
@@ -4197,10 +4202,6 @@ module.exports={
     "nounness"
   ],
 
-  "love": [
-    "nounness"
-  ],
-
   "sadness": [
     "nounness"
   ],
@@ -4234,6 +4235,20 @@ module.exports={
 
   "furtive": [
     "adjective"
+  ],
+
+  "lantern": [
+    "noun",
+    "countable",
+    "yellow",
+    "black"
+  ],
+
+  "lamp": [
+    "noun",
+    "countable",
+    "yellow",
+    "black"
   ]
 
 }
@@ -4307,7 +4322,7 @@ var dreams = [
   //'The #noun# #verb.s#, the #noun# #verb.s#, the #noun# #verb.s#.',
   'Memories of #nounPhrase#.',
   'Memories of #nounPhrase#, #verb.ing# #preposition# #nounPhrase#.',
-  '#verb.ing.a.capitalize# #adjective# #countableNoun#.',
+  '#describedNoun.capitalize#.',
   'What #verb.s# #preposition# #nounPhrase#?'
 ];
 
@@ -4344,7 +4359,8 @@ var singularNounPhrases = [
   '#adjective.a# #noun#',
   '#adjective.a# #noun#',
   'some #uncountableNoun#',
-  'some #adjective# #uncountableNoun#'
+  'some #adjective# #uncountableNoun#',
+  '#relationship.a#',
 ];
 
 var pluralNounPhrases = [
@@ -4365,13 +4381,13 @@ var pluralNounPhrases = [
 var baseGrammar = {
   'dreamSequence': dreamSequences,
   'dream': dreams,
-  'noun': tagTree.noun.concat(relationship),
+  'noun': tagTree.noun,
   'nounness': tagTree.nounness,
   'verb': tagTree.verb,
   'preposition': tagTree.preposition,
   'subjectClause': subjectClauses,
   'adjective': tagTree.adjective,
-  'countableNoun': taggedBy('noun', 'countable').concat(relationship),
+  'countableNoun': taggedBy('noun', 'countable'),
   'uncountableNoun': taggedBy('noun', 'uncountable'),
   'singularNounPhrase': singularNounPhrases,
   'pluralNounPhrase': pluralNounPhrases,
@@ -4381,7 +4397,9 @@ var baseGrammar = {
   'upVerb': taggedBy('verb', 'up'),
   'downVerb': taggedBy('verb', 'down'),
   'relationAdjective': taggedBy('adjective', 'relational'),
-  'relation': tagTree.relation
+  'relation': tagTree.relation,
+  'describedNoun': '#verb.ing.a# #adjective# #countableNoun#',
+  'relationship': relationship
 };
 
 var mods = {...tracery.baseEngModifiers};
@@ -4411,6 +4429,12 @@ mods.s = function(s) {
   if (s.charAt(s.length - 1) === 'z') {
     return s + 'es';
   }
+  if (s.length >= 9 && s.slice(-9) === 'lightning') {
+    return s.slice(0, -9) + 'lightning';
+  }
+  if (s.length >= 8 && s.slice(-8) === 'savannah') {
+    return s.slice(0, -8) + 'savannahs';
+  }
   return originalSMod(s);
 };
 mods.ing = function(s) {
@@ -4431,6 +4455,9 @@ mods.ing = function(s) {
   }
   else if (s.slice(-3) === 'cut') {
     return s.slice(0, -3) + 'cutting';
+  }
+  else if (s.slice(-4) === 'trot') {
+    return s.slice(0, -4) + 'trotting';
   }
   return s + 'ing';
 }
