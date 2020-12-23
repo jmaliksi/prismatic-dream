@@ -4543,8 +4543,10 @@ mods.sif = function(s) {
   s2 = s.split(" ");
   var noun = s2[s2.length - 2];
   switch (noun) {
-    case 'grass': return mod.s(s);
     case 'mice': return s;
+    case 'hyacinth': return 'hyacinths';
+    case 'albatross':
+    case 'grass': return mod.s(s);
   }
   if (noun[noun.length - 1] !== 's') {
     return mods.s(s);
