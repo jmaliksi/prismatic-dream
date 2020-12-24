@@ -3636,8 +3636,8 @@ module.exports={
   ],
 
   "gallivant": [
-    "verb",
-    "up"
+    "_verb",
+    "_up"
   ],
 
   "cut": [
@@ -4563,7 +4563,7 @@ mods.sif = function(s) {
     case 'mice': return s;
     case 'corn': return s;
     case 'albatross':
-    case 'grass': return mod.s(s);
+    case 'grass': return mods.s(s);
   }
   if (noun[noun.length - 1] !== 's') {
     return mods.s(s);
