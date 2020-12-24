@@ -1,5 +1,5 @@
 # prismatic-dream
-A dream without a dream.
+A dream without a dream. Built atop of [Tracery](http://www.tracery.io/)
 
 https://jmaliksi.github.io/prismatic-dream/
 
